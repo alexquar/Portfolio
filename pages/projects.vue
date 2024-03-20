@@ -38,6 +38,7 @@ const { data } = await useAsyncQuery(query);
         <h2 class="text-2xl text-indigo-800 font-semibold mb-2 hover:underline">{{ project.name }}</h2>
       </a>
       <p>{{ project.description }}</p>
+      <p class="mt-3">Created: {{ String(project.createdAt).slice(0,10) }}</p>
       <div class="mt-4">
         <Icon name="fontisto:star" size="1.1rem" class="text-indigo-700" /> Stars: {{ project.stargazers.totalCount }}
         <Icon name="system-uicons:branch" size="1.1rem" class="text-indigo-800" /> Forks: {{ project.forks.totalCount }}

@@ -27,7 +27,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
         I have two cats named Harry and Hermione and a lovely golden retriever named Gryff. I love to cook anything, and if an idea is given to me I have to give it a try. I love movies so much and some of my personmal favorites are discussed right here on my blog.
       </p>
       <p class="text-lg py-2">
-        Valuable technical skills I have include, but are not limited to C/C++/C#, Javascript/TypeScript, Java, Python, HTML, CSS, SCSS/SASS, Bootstrap, Tailwind, Vue, Nuxt, Django, MongoDB, MySQL, GraphQL, Firebase, Git, Github, Netlify.
+        To view my technical skills and to learn about this portfolio please view the "About" page
       </p>
     </div>
     <img src="~/assets/hi.png" class="w-1/2 md:max-w-sm p-8 mx-auto" />

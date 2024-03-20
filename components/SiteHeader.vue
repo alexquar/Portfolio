@@ -8,7 +8,7 @@ const navigation = [
   { name: 'Home', href: '/', current: route.name == 'index' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
   { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
-  { name: 'Uses', href: '/uses', current: route.name == 'uses' },
+  { name: 'About', href: '/uses', current: route.name == 'uses' },
   { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
 ]
 </script>
