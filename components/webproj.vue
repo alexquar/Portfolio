@@ -46,7 +46,7 @@
 
         <div class="lg:col-span-1 hidden md:block">
           <div class="aspect-h-3 aspect-w-2 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <img :src="info.images.src" :alt="info.images.alt" class="h-full w-full object-cover object-center" />
+            <img :src="info.image.src" :alt="info.image.alt" class="h-full w-full object-cover object-center" />
           </div>
         </div>
 
@@ -56,24 +56,5 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
   const { info } = defineProps(['info'])
-  const info = {
-    name: 'Basic Tee 6-Pack',
-    website: '#',
-    image:  {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-        alt: 'Two each of gray, white, and black shirts laying flat.',
-      },
-    description:
-      'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-    tools: [
-      'Hand cut and sewn locally',
-      'Dyed with our proprietary colors',
-      'Pre-washed & pre-shrunk',
-      'Ultra-soft 100% cotton',
-    ],
-    details:
-      'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-  }
   </script>
