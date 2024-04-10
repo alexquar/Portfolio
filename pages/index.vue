@@ -17,20 +17,20 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
       <h2 class="text-3xl font-bold mt-8">About Me</h2>
       <p class="text-lg py-2">
         I am a passionate Computer Engineering student at the University of Waterloo just outside of my hometown, Cambridge, Ontario. I am a
-        hard-working leader who believes in anything can be accomplished with organization, determination and a great deal of collaboration.
+        hard-working leader who believes anything can be accomplished with organization, determination and a great deal of collaboration.
       </p>
       <p class="text-lg py-2">
         I have been writing code for over 5 years now and have a plethora of experience throught work, school, independant study, tutoring and personal projects. I love learning new things and I am always looking to experience something new and interesting!
       </p>
       <p class="text-lg py-2">
         In my personal life I am a massive sports fan, tech enthousiast, chef, movie critic and animal lover. My love of sports is for, but not limited to hockey, baseball, football, swimming, golf, frisbee, skiing and more.
-        I have two cats named Harry and Hermione and a lovely golden retriever named Gryff. I love to cook anything, and if an idea is given to me I have to give it a try. I love movies so much and some of my personmal favorites are discussed right here on my blog.
+        I have two cats named Harry and Hermione and a lovely golden retriever named Gryff. I love to cook anything, and if an idea is given to me I have to give it a try. I love movies so much and some of my favorites are discussed right here on my blog.
       </p>
       <p class="text-lg py-2">
-        To view my technical skills and to learn about this portfolio please view the "About" page
+        To view my technical skills and to learn about this portfolio please view the "About" page.
       </p>
       <p class="text-lg py-2">
-       Stuff I can't fit on my resume?
+       Link to resume
       </p>
     </div>
     <img src="~/assets/hi.png" class="w-1/2 md:max-w-sm p-8 mx-auto" />

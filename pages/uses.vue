@@ -35,6 +35,7 @@
     <li class="ml-8 py-1">Netlify</li>
     <li class="ml-8 py-1">VS Code, VS, Replit, </li>
     <li class="ml-8 py-1">Postman</li>
+    <li class="ml-8 py-1">Markdown</li>
     <li class="ml-8 py-1">Microsft Office & Google Workplace </li>
     <li class="ml-8 py-1">Jira & Slack</li>
     <li class="ml-8 py-1">Windows 10/11, MacOS, Linux</li>
@@ -46,6 +47,7 @@
     <li class="ml-8 py-1">Nuxt 3</li>
     <li class="ml-8 py-1">Tailwindcss</li>
     <li class="ml-8 py-1">GraphQL (to pull info from github with apollo)</li>
+    <li class="ml-8 py-1">Markdown for my blog</li>
     <li class="ml-8 py-1">Netlify (for hosting)</li>
     <li class="ml-8 py-1">Vue, CSS, HTML, TS</li>
   </ul>
