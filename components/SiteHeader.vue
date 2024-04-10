@@ -28,13 +28,11 @@ const navigation = [
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
-            <img class="block h-8 w-auto lg:hidden" src="../assets/portfolioimage.png"
+            <img class="block h-12 w-auto lg:h-10" src="../assets/port.png"
               alt="Portfolio" />
-            <img class="hidden h-8 w-auto lg:block" src="../assets/portfolioimage.png"
-              alt="Your Company" />
           </div>
           <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 mt-0.5">
               <a v-for="item in navigation" :key="item.name" :href="item.href"
                 :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']"
                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
