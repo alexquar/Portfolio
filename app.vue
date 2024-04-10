@@ -7,3 +7,17 @@
     <SiteFooter />
   </div>
 </template>
+
+<script setup lang="ts">
+const title = ref('Alex\'s portfolio')
+const description = ref('Welcome all to my portfolio!')
+import hi from './assets/hi.png'
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: hi }]
+})
+</script>

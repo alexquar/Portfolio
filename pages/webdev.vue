@@ -10,6 +10,8 @@
         <hr class="my-2">
         </div>
         </div>
+        <p class="text-7xl
+        ">More to come!</p>
         </div>
   </template>
   
@@ -17,12 +19,13 @@
   import { ref } from 'vue'
   import uproj from '../assets/uproj.png'
   import helpphoto from '../assets/U-help.png'
+  import umusic from '../assets/umusic.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
     image:  {
         src: helpphoto,
-        alt: 'Two each of gray, white, and black shirts laying flat.',
+        alt: 'U Help ss',
       },
     tools: [
       'React',
@@ -32,7 +35,7 @@
       'Netlify',
     ],
     details:
-      'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+      'Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
   },{
     name: 'U Projects',
     website: 'https://u-projects-management.web.app/login',
@@ -45,42 +48,25 @@
     tools: [
       'React',
       'Firebase Auth',
+      'Firebase Storage',
+      'Firebase Firestore',
+      'Firebase Hosting',
+    ],
+  },{
+    name: 'U Music',
+    website: 'umusic-123.web.app/login',
+    image:  {
+        src: umusic,
+        alt: 'U Music ss',
+      },
+    details:
+      'Music playlist creation and sharing site. Created with vue and firebase (firestore, authentication, storage, hosting). Users can login/signup and then create new playlists and add a cover and description. They can add as many songs as they want. Users view own playlists or go to home page to view public playlists. ',
+    tools: [
+      'Vue',
+      'Firebase Auth',
       'Firebase storage',
-      'Firestore',
+      'Firebase Firestore',
+      'Firebase Hosting',
     ],
-  },{
-    name: 'Basic Tee 6-Pack',
-    website: '#',
-    image:  {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-        alt: 'Two each of gray, white, and black shirts laying flat.',
-      },
-    description:
-      'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-    tools: [
-      'Hand cut and sewn locally',
-      'Dyed with our proprietary colors',
-      'Pre-washed & pre-shrunk',
-      'Ultra-soft 100% cotton',
-    ],
-    details:
-      'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-  },{
-    name: 'Basic Tee 6-Pack',
-    website: '#',
-    image:  {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-        alt: 'Two each of gray, white, and black shirts laying flat.',
-      },
-    description:
-      'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-    tools: [
-      'Hand cut and sewn locally',
-      'Dyed with our proprietary colors',
-      'Pre-washed & pre-shrunk',
-      'Ultra-soft 100% cotton',
-    ],
-    details:
-      'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
   },]
   </script>
