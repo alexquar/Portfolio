@@ -2,7 +2,7 @@
 const query = gql`
 {
   viewer {
-    repositories(first: 28, orderBy:{field:CREATED_AT,direction: DESC}) {
+    repositories(first: 27, orderBy:{field:CREATED_AT,direction: DESC}) {
       totalCount
       nodes {
         id
@@ -30,8 +30,8 @@ const { data } = await useAsyncQuery(query);
 
 <template>
   <h1 class="text-3xl my-8">Projects</h1>
-  <p class="text-lg mb-8">Here are some of my projects on GitHub.</p>
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-10">
+  <p class="text-lg mb-8">Here are some of my larger projects on GitHub. I hope you enjoy!</p>
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-5  gap-10">
     <div v-for="project in data?.viewer.repositories.nodes" :key="project.id"
       class="p-8 border-4 my-4 rounded-lg hover:bg-gray-50">
       <a :href="project.url" target="_blank">
