@@ -29,6 +29,9 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
       <p class="text-lg py-2">
         To view my technical skills and to learn about this portfolio please view the "About" page
       </p>
+      <p class="text-lg py-2">
+       Stuff I can't fit on my resume?
+      </p>
     </div>
     <img src="~/assets/hi.png" class="w-1/2 md:max-w-sm p-8 mx-auto" />
   </section>

@@ -24,12 +24,14 @@
     <li class="ml-8 py-1">MySQL</li>
     <li class="ml-8 py-1">MongoDB</li>
     <li class="ml-8 py-1">GraphQL</li>
-    <li class="ml-8 py-1">Netlify</li>
     <li class="ml-8 py-1">Git & Github</li>
+    <li class="ml-8 py-1">Figma</li>
+    <li class="ml-8 py-1">Netlify</li>
     <li class="ml-8 py-1">VS Code, VS, Replit, </li>
     <li class="ml-8 py-1">Netlify</li>
     <li class="ml-8 py-1">Microsft Office & Google Workplace </li>
     <li class="ml-8 py-1">Jira & ITSM</li>
+    <li class="ml-8 py-1">Windows11, MacOS, Linux</li>
   </ul>
 
   <h1 class="text-3xl text-center lg:text-left font-bold mt-8 mb-2">This Portfolio</h1>
@@ -44,8 +46,3 @@
 </div>
 
 </template>
-
-<style scoped>
-
-
-</style>
