@@ -55,7 +55,7 @@
     ],
   },{
     name: 'U Music',
-    website: 'umusic-123.web.app/login',
+    website: 'https://umusic-123.web.app/login',
     image:  {
         src: umusic,
         alt: 'U Music ss',
@@ -72,7 +72,7 @@
   },
   {
     name: 'U Exchange',
-    website: 'u-exchange.netlify.app/',
+    website: 'https://u-exchange.netlify.app/',
     image:  {
         src: uexchange,
         alt: 'U exchange ss',
@@ -89,7 +89,7 @@
   },
   {
     name: 'U Weather',
-    website: 'u-weather-net.web.app/',
+    website: 'https://u-weather-net.web.app/',
     image:  {
         src: uweather,
         alt: 'U weather ss',
