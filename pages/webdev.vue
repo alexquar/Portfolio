@@ -16,10 +16,11 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue'
+ import uexchange from '../assets/uexchange.png'
   import uproj from '../assets/uproj.png'
   import helpphoto from '../assets/U-help.png'
   import umusic from '../assets/umusic.png'
+  import uweather from '../assets/uweather.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -66,6 +67,40 @@
       'Firebase Auth',
       'Firebase storage',
       'Firebase Firestore',
+      'Firebase Hosting',
+    ],
+  },
+  {
+    name: 'U Exchange',
+    website: 'u-exchange.netlify.app/',
+    image:  {
+        src: uexchange,
+        alt: 'U exchange ss',
+      },
+    details:
+      'Exchange rate site built using Next and TailwindCSS. This utilizes CSS3, HTML5, React with JS. This makes use of the currencyapi and allows users to access current and historic data for 100+ curencies. Use instructions available on the home page. ',
+    tools: [
+      'Next',
+      '(React)',
+      'TailwindCSS',
+      'Currency API',
+      'Netlify',
+    ],
+  },
+  {
+    name: 'U Weather',
+    website: 'u-weather-net.web.app/',
+    image:  {
+        src: uweather,
+        alt: 'U weather ss',
+      },
+    details:
+      'Weather app built primarily with Vue and Tailwind hosted on Firebase. Users can search for cities, view their weather currently and in the future. They can then add the location to local storage so that it appears on their home screen. For more hit the + icon on the navbar. ',
+    tools: [
+      'Vue',
+      'TailwindCSS',
+      'Openweather API',
+      'Mapbox API',
       'Firebase Hosting',
     ],
   },]
