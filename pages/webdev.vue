@@ -21,6 +21,7 @@
   import helpphoto from '../assets/U-help.png'
   import umusic from '../assets/umusic.png'
   import uweather from '../assets/uweather.png'
+  import uchat from '../assets/uchat.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -101,6 +102,23 @@
       'TailwindCSS',
       'Openweather API',
       'Mapbox API',
+      'Firebase Hosting',
+    ],
+  },
+  {
+    name: 'U Chat',
+    website: 'https://learning-38e55.web.app/',
+    image:  {
+        src: uchat,
+        alt: 'U chat ss',
+      },
+    details:
+      'Global chatroom application built with Vue and Firebase. Users can login or signup and are then free to access a global chatroom that all authenicated users can send messages to. Date formating is done with date-fns and styling with pure CSS.',
+    tools: [
+      'Vue',
+      'CSS3',
+      'Firebase firestore',
+      'Firebase Auth',
       'Firebase Hosting',
     ],
   },]
