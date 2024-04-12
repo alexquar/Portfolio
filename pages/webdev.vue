@@ -10,7 +10,7 @@
         <hr class="my-2">
         </div>
         </div>
-        <p class="text-7xl
+        <p class="text-7xl text-center
         ">More to come!</p>
         </div>
   </template>
@@ -22,6 +22,7 @@
   import umusic from '../assets/umusic.png'
   import uweather from '../assets/uweather.png'
   import uchat from '../assets/uchat.png'
+  import upasss from '../assets/upass.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -118,6 +119,22 @@
       'Vue',
       'CSS3',
       'Firebase firestore',
+      'Firebase Auth',
+      'Firebase Hosting',
+    ],
+  }, {
+    name: 'U Passwords',
+    website: 'https://u-passwords.web.app/login',
+    image:  {
+        src: upasss,
+        alt: 'U pass ss',
+      },
+    details:
+      'Fully responsive mobile first password management system build with react, bootstrap and firebase. Users can login/signup and then access several tools like customizabled password creation, password evaluation and password sorting/storage. Users can take a generated password straight to testing or storage and can delete saved passwords at any time.',
+    tools: [
+      'React',
+      'Bootstrap',
+      'Firebase Firestore',
       'Firebase Auth',
       'Firebase Hosting',
     ],
