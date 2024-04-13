@@ -23,6 +23,7 @@
   import uweather from '../assets/uweather.png'
   import uchat from '../assets/uchat.png'
   import upasss from '../assets/upass.png'
+  import ubooks from '../assets/ubooks.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -106,7 +107,24 @@
       'Firebase Hosting',
     ],
   },
-  {
+ {
+    name: 'U Passwords',
+    website: 'https://u-passwords.web.app/login',
+    image:  {
+        src: upasss,
+        alt: 'U pass ss',
+      },
+    details:
+      'Fully responsive mobile first password management system build with react, bootstrap and firebase. Users can login/signup and then access several tools like customizabled password creation, password evaluation and password sorting/storage. Users can take a generated password straight to testing or storage and can delete saved passwords at any time.',
+    tools: [
+      'React',
+      'Bootstrap',
+      'Firebase Firestore',
+      'Firebase Auth',
+      'Firebase Hosting',
+    ]
+  },
+    {
     name: 'U Chat',
     website: 'https://learning-38e55.web.app/',
     image:  {
@@ -123,17 +141,17 @@
       'Firebase Hosting',
     ],
   }, {
-    name: 'U Passwords',
-    website: 'https://u-passwords.web.app/login',
+    name: 'U Books',
+    website: 'https://reading-list-web.web.app/login',
     image:  {
-        src: upasss,
-        alt: 'U pass ss',
+        src: ubooks,
+        alt: 'U books ss',
       },
     details:
-      'Fully responsive mobile first password management system build with react, bootstrap and firebase. Users can login/signup and then access several tools like customizabled password creation, password evaluation and password sorting/storage. Users can take a generated password straight to testing or storage and can delete saved passwords at any time.',
+      'Simple reading list app to store books you\'re looking to read. Requires logon/signup. Built using Vue, CSS3 and Firebase9 (firestore, auth, hosting). Can delete and favourite your own books as well as take a look at what others are reading and add their books to your list.',
     tools: [
-      'React',
-      'Bootstrap',
+      'Vue',
+      'CSS3',
       'Firebase Firestore',
       'Firebase Auth',
       'Firebase Hosting',
