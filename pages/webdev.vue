@@ -24,6 +24,7 @@
   import uchat from '../assets/uchat.png'
   import upasss from '../assets/upass.png'
   import ubooks from '../assets/ubooks.png'
+  import uimg from '../assets/uimg.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -150,6 +151,23 @@
     details:
       'Simple reading list app to store books you\'re looking to read. Requires logon/signup. Built using Vue, CSS3 and Firebase9 (firestore, auth, hosting). Can delete and favourite your own books as well as take a look at what others are reading and add their books to your list.',
     tools: [
+      'Vue',
+      'CSS3',
+      'Firebase Firestore',
+      'Firebase Auth',
+      'Firebase Hosting',
+    ],
+  },
+  {
+    name: 'U Img',
+    website: 'https://img-u-social.web.app/login',
+    image:  {
+        src: uimg,
+        alt: 'U img ss',
+      },
+    details:
+      'Instagram like social media app build with firebase and Vue. Users can signup/login then share their pictures with a caption. User cam view their profile and delete their own pictures as well as use the global search to check out other users profiles.'
+    ,tools: [
       'Vue',
       'CSS3',
       'Firebase Firestore',

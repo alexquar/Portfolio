@@ -12,6 +12,7 @@
     <li class="ml-8 py-1">SQL</li>
     <li class="ml-8 py-1">Bootstrap</li>
     <li class="ml-8 py-1">Tailwindcss</li>
+    <li class="ml-8 py-1">Material UI</li>
     <li class="ml-8 py-1">EJS</li>
     <li class="ml-8 py-1">Python</li>
     <li class="ml-8 py-1">Django</li>
@@ -26,6 +27,7 @@
     <li class="ml-8 py-1">Supabase</li>
     <li class="ml-8 py-1">MySQL</li>
     <li class="ml-8 py-1">MongoDB</li>
+    <li class="ml-8 py-1">PostGreSQL</li>
     <li class="ml-8 py-1">REST apis</li>
     <li class="ml-8 py-1">GraphQL</li>
     <li class="ml-8 py-1">Bash</li>
@@ -34,6 +36,7 @@
     <li class="ml-8 py-1">Figma</li>
     <li class="ml-8 py-1">Netlify</li>
     <li class="ml-8 py-1">VS Code, VS, Replit, </li>
+    <li class="ml-8 py-1">AWS</li>
     <li class="ml-8 py-1">Postman</li>
     <li class="ml-8 py-1">Markdown</li>
     <li class="ml-8 py-1">Microsft Office & Google Workplace </li>
