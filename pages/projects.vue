@@ -2,7 +2,7 @@
 const query = gql`
 {
   viewer {
-    repositories(first: 27, orderBy:{field:CREATED_AT,direction: DESC}) {
+    repositories(first: 36, orderBy:{field:CREATED_AT,direction: DESC}) {
       totalCount
       nodes {
         id
