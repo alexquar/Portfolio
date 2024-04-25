@@ -25,6 +25,7 @@
   import upasss from '../assets/upass.png'
   import ubooks from '../assets/ubooks.png'
   import uimg from '../assets/uimg.png'
+  import ushop from '../assets/ushop.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -106,6 +107,24 @@
       'Openweather API',
       'Mapbox API',
       'Firebase Hosting',
+    ],
+  },
+  {
+    name: 'U Shop',
+    website: 'https://github.com/alexquar/U-shop',
+    image:  {
+        src: ushop,
+        alt: 'U shop ss',
+      },
+    details:
+      'Fully responsive ecommerce site made with nuxt and tailwind. Pinia is used to store items for checkout and Stripe is used to process payments. All items being sold are from the FakeStoreAPI. Users can add items to their cart and then order it in a test environment. Users can create accounts to store information to save time when purchasing.'
+    ,tools: [
+      'Nuxt',
+      'TailwindCSS',
+      'Pinia',
+      'Stripe',
+      'FakestoreAPI',
+      'Firebase Auth/Hosting',
     ],
   },
  {
