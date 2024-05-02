@@ -124,7 +124,7 @@
       'Pinia',
       'Stripe',
       'FakestoreAPI',
-      'Firebase Auth/Hosting',
+      'Firebase Auth & Hosting',
     ],
   },
  {
