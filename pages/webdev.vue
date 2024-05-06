@@ -3,7 +3,7 @@
     <div class="bg-white py-5">
       <div class="py-6">
         <h1 class="text-center my-5 text-7xl font-serif mx-5 md:mx-0">My Web-Dev Projects</h1>
-        <h3 class="text-center my-5 text-3xl font-sans mx-5 md:mx-0">Here are some of my projects from large to small featuring a wide variety of strategies and tools all linked to where they are hosted or available on GitHub.</h3>
+        <h3 class="text-center my-5 text-3xl font-sans mx-5 md:mx-0">Here are some of my public projects from large to small featuring a wide variety of strategies and tools all linked to where they are hosted or available on GitHub.</h3>
        
        <div v-for="info in infos" :key="info.name"> 
         <Webproj class="my-3"  :info="info"/>
