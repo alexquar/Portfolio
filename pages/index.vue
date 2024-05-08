@@ -27,7 +27,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
         I have two cats named Harry and Hermione and a lovely golden retriever named Gryff. I love to cook anything, and if an idea is given to me I have to give it a try. I love movies so much and some of my favorites are discussed right here on my blog.
       </p>
       <p class="text-lg py-2">
-        To view my technical skills and to learn about this portfolio please view the "About" page or check out my resume.
+        To view my technical skills and to learn about this portfolio please view the "About" page or check out my resume linked below.
       </p>
       <p class="text-lg text-center py-2 my-10">
         <a href="https://docs.google.com/document/d/e/2PACX-1vTb15Djw-SYk99io1jrWil-gTTHBseXcH1ALEoPjo3Kg3KSiybar_5pjFR11RbqtA/pub" class="bg-gray-900 text-white border-none hover:bg-white hover:text-gray-900 hover:border-gray-900 p-5 border-2 hover:border-solid rounded-full">My Resume</a>
