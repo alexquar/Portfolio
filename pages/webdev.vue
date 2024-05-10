@@ -26,6 +26,7 @@
   import ubooks from '../assets/ubooks.png'
   import uimg from '../assets/uimg.png'
   import ushop from '../assets/ushop.png'
+  import ufitness from '../assets/ufitness.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -43,6 +44,23 @@
     details:
       'Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
   },{
+    name: 'U Fitness',
+    website: 'https://github.com/alexquar/U-fitness',
+    image:  {
+        src: ufitness,
+        alt: 'U fitness ss',
+      },
+    details:
+      'Fullstack workout creation site built with MERN stack. MongoDB (atlas with mongoose), ExpressJS, ReactJS, NodeJS and JWTs for Auth. Users can signup/login then create exercises with sets/reps and amount to create workouts.',
+    tools: [
+      'React',
+      'Node.Js',
+      'Express.Js',
+      'MongoDB (Atlas & Mongoose)',
+      'JWTS (Auth)',
+    ],
+  },
+  {
     name: 'U Projects',
     website: 'https://u-projects-management.web.app/login',
     image:  {
