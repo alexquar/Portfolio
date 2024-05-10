@@ -27,6 +27,7 @@
   import uimg from '../assets/uimg.png'
   import ushop from '../assets/ushop.png'
   import ufitness from '../assets/ufitness.png'
+  import ufinance from '../assets/ufinance.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -179,6 +180,23 @@
       'Firebase Hosting',
     ],
   }, {
+    name: 'U Finance',
+    website: 'https://u-finance-app.web.app/login',
+    image:  {
+        src: ufinance,
+        alt: 'U finance ss',
+      },
+    details:
+      'Finance app build with React and Firebase. Users can login/signup then add transactions to their tracker. You can only view your own transactions and delete them whenever you want. New features like insights and budgeting to come.',
+    tools: [
+      'React',
+      'CSS3',
+      'Firebase firestore',
+      'Firebase Auth',
+      'Firebase Hosting',
+    ],
+  },
+  {
     name: 'U Books',
     website: 'https://reading-list-web.web.app/login',
     image:  {
