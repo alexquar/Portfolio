@@ -28,6 +28,7 @@
   import ushop from '../assets/ushop.png'
   import ufitness from '../assets/ufitness.png'
   import ufinance from '../assets/ufinance.png'
+  import ublog from '../assets/ublog.png'
   const infos = [{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
@@ -126,6 +127,23 @@
       'Openweather API',
       'Mapbox API',
       'Firebase Hosting',
+    ],
+  },
+  {
+    name: 'U Blog',
+    website: 'https://github.com/alexquar/U-blog',
+    image:  {
+        src: ublog,
+        alt: 'U blog ss',
+      },
+    details:
+      'Public blogging site made using NodeJs, ExpressJs, EJs, MongoDB and HTML/CSS. Uses Nodemon and Mongoose to make the process easier. Users can create blogs about whatever they want, just add a title, snippet and body to create your first blog.',
+    tools: [
+      'EJS',
+      'Node.Js',
+      'Express.Js',
+      'MongoDB (Atlas & Mongoose)',
+      'CSS3',
     ],
   },
   {
