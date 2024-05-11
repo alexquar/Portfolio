@@ -1,6 +1,6 @@
 ---
 title: Thoughts on Leafs Playoffs
-description: My oppinion on the Toronto Maple Leafs heading into the playloffs...
+description: My opinion on the Toronto Maple Leafs heading into the playoffs...
 date: 2024-04-9
 cover: leafs.jpg
 tags:
