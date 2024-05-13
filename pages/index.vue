@@ -16,7 +16,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
     <div class="md:w-3/4">
       <h2 class="text-3xl font-bold mt-8">About Me</h2>
       <p class="text-lg py-2">
-        I am a passionate Computer Engineering student at the University of Waterloo just outside of my hometown, Cambridge, Ontario. I am a
+        I am a passionate Computer Engineering student at the University of Waterloo just outside my hometown, Cambridge, Ontario. I am a
         hard-working leader who believes anything can be accomplished with organization, determination and a great deal of collaboration.
       </p>
       <p class="text-lg py-2">
