@@ -62,7 +62,7 @@
       'Netlify and Render',
     ],
     details:
-      'Project for hawkhacks 2023. Geesespotter can help you easily figure out what is going on around the university of Waterloo campus to find new friends and participate in planned or spontaneous activities. We felt that with such a large and disconnected campus it was difficult to know what was going on and what you could get involved with. Our goal was to provide students with a way to post their activities online and connect with others. Backend rests when inactive so will take a while to login.',
+      'Project for hawkhacks 2024. Geesespotter can help you easily figure out what is going on around the university of Waterloo campus to find new friends and participate in planned or spontaneous activities. We felt that with such a large and disconnected campus it was difficult to know what was going on and what you could get involved with. Our goal was to provide students with a way to post their activities online and connect with others. The backend rests when inactive so it will take a minute to signup/login.',
   },{
     name: 'U Fitness',
     website: 'https://github.com/alexquar/U-fitness',
