@@ -16,7 +16,7 @@ const links = [
       <p class="flex-1 mt-3">&copy; Alex Quarrie 2024. All Rights Reserved.</p>
       <div class="flex flex-row justify-center gap-4 mb-4 mt-2">
         <a v-for="link in links" :key="link.name" :href="link.href">
-          <Icon :name="link.icon" size="1.5rem" class="text-gray-300" />
+          <Icon :name="link.icon" size="1.5rem" class="text-gray-300 hover:text-gray-300 active:text-gray-400  transform transition duration-300 hover:-translate-y-3  hover:scale-150  hover:opacity-90" />
         </a>
       </div>
     </section>

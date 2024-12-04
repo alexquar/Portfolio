@@ -10,8 +10,8 @@ const navigation = [
   { name: 'About', href: '/uses', current: route.name == 'uses' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
   { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
-  
-  
+  { name: 'CommunoLearn', href: '/communoLearn', current: route.name == 'communoLearn' },
+  { name: 'Mobile Apps', href: '/apps', current: route.name == 'apps' },
 ]
 </script>
 
