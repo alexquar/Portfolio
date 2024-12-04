@@ -19,8 +19,8 @@ const links = [
       </svg>
     </div>
     <footer class="bg-gray-800">
-      <section class="mx-auto max-w-7xl px-2 sm:px-4 lg:py-6 text-gray-300 flex flex-row">
-        <p class="flex-1 mt-3">&copy; Alex Quarrie 2024. All Rights Reserved.</p>
+      <section class="mx-auto max-w-7xl px-2 sm:px-4 lg:py-6 text-gray-300 flex justify-between flex-row">
+        <p class="mt-3 transform transition duration-300 hover:-translate-y-3 hover:scale-110 hover:opacity-90">&copy; Alex Quarrie 2024. All Rights Reserved.</p>
         <div class="flex flex-row justify-center gap-4 mb-4 mt-2">
           <a v-for="link in links" :key="link.name" :href="link.href">
             <Icon 

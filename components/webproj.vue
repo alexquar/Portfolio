@@ -5,10 +5,10 @@
     >
       <div class="pt-6 grid grid-cols-5 gap-4 place-items-center">
   
-        <div class="md:col-span-2 col-span-4 md:border-r md:border-gray-200">
+        <div class="md:col-span-2 col-span-5 md:border-r md:border-gray-200">
         <!-- Product info -->
-        <div class="max-w-2xl px-4 pb-8 pt-10 sm:px-6 place-content-center lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-10 lg:pt-16">
-          <div class="lg:col-span-2 lg:pr-8">
+        <div class="max-w-2xl pb-8 pt-10 place-content-center lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:pb-10 lg:pt-16">
+          <div class="lg:col-span-2">
             <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ info.name }}</h1>
           </div>
         </div>
@@ -37,20 +37,17 @@
             </div>
   
             <div class="mt-10">
-              <div class="mt-4 space-y-6 flex justify-center">
+              <div class="flex justify-center">
                 <a :href="info.website"><p class="text-lg px-10 py-3 hover:bg-gray-700 active:bg-gray-500 rounded-3xl bg-gray-900 text-white">Take a look here!</p></a>
               </div>
             </div>
           </div>
         </div>
-
         <div class="col-span-3 hidden md:block">
           <div class="aspect-h-6 aspect-w-5">
             <img :src="info.image.src" :alt="info.image.alt" class="h-full w-full object-cover object-center" />
           </div>
         </div>
-
-
         </div>
         </div>
   </template>

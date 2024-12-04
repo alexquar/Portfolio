@@ -1,9 +1,10 @@
--fix page headers *next
--add to blog 
+-fix page headers //done
+-add to blog                    *next
 -add new skills     //done
 -animate wave   //done
 -animate skills  //done
--add apps 
+-add apps                        *next
 -improve proj styling //done
+-add communoLearn               *next
 -improve text 
 -fix resume link

@@ -8,8 +8,6 @@
         <hr class="my-2">
         </div>
         </div>
-        <p class="text-7xl text-center
-        ">More to come!</p>
         </div>
   </template>
   
@@ -129,7 +127,7 @@
     ],
   },
   {
-    name: 'U Weather',
+    name: 'The Local Weather',
     website: 'https://u-weather-net.web.app/',
     image:  {
         src: uweather,
