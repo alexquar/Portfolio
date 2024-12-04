@@ -9,7 +9,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
 
 <template>
   <section class="mx-4 md:mx-0 ">
-    <h1 class="text-5xl font-bold mt-20">👋🏻 Hey, I'm Alex Quarrie!</h1>
+    <h1 class="text-5xl font-bold mt-10 md:mt-20">👋🏻 Hey, I'm Alex Quarrie!</h1>
     <p class="text-base text-gray-900 p-2 italic">Computer Engineering Student at the University of Waterloo.</p>
   </section>
   <section class="flex flex-col md:flex-row mx-4 md:mx-0">
@@ -37,7 +37,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
     <img src="~/assets/hi.png" class="w-1/2  my-auto md:max-w-sm p-8 mx-auto" />
   </section>
 
-  <section class="mb-5 pb-5">
+  <section class="mt-5">
     <h2 class="text-3xl text-center md:text-start font-bold mt-8">Latest Blog Posts</h2>
     <div class="grid md:grid-cols-3 pt-8 gap-10">
       <Post :posts="posts" />

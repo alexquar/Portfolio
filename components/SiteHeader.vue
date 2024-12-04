@@ -6,11 +6,10 @@ const route = useRoute();
 
 const navigation = [
   { name: 'Home', href: '/', current: route.name == 'index' },
-  { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
   { name: 'Skills', href: '/uses', current: route.name == 'uses' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
   { name: 'Web Apps', href: '/webdev', current: route.name == 'webdev' },
-  { name: 'Mobile Apps', href: '/apps', current: route.name == 'apps' },
+  { name: 'Mobile Apps', href: '/mobile', current: route.name == 'mobile' },
   { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
 
 ]

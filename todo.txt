@@ -1,6 +1,6 @@
 -fix page headers *next
 -add to blog 
--add new skills     *next
+-add new skills     //done
 -animate wave   //done
 -animate skills  //done
 -add apps 
