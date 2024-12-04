@@ -1,6 +1,8 @@
 
 <template>
-    <div class="bg-white py-5">
+    <div class="bg-white py-5"
+    data-aos="fade-up"
+    >
       <div class="pt-6 grid grid-cols-5 gap-4 place-items-center">
   
         <div class="md:col-span-2 col-span-4 md:border-r md:border-gray-200">
@@ -26,9 +28,9 @@
               <h3 class="text-sm font-medium text-gray-900">Used to make:</h3>
   
               <div class="mt-4">
-                <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                  <li v-for="tool in info.tools" :key="tool" class="text-gray-400">
-                    <span class="text-gray-600">{{ tool }}</span>
+                <ul role="list" class="space-y-3 flex flex-col text-sm">
+                  <li v-for="tool in info.tools" :key="tool" class="text-sm w-fit transform transition duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90 font-semibold inline-block py-2 px-4 rounded-3xl bg-blue-500 hover:bg-blue-300 uppercase">
+                    <span class="text-white">{{ tool }}</span>
                   </li>
                 </ul>
               </div>
@@ -36,7 +38,7 @@
   
             <div class="mt-10">
               <div class="mt-4 space-y-6 flex justify-center">
-                <a :href="info.website"><p class="text-4xl text-gray-900">Take a look here!</p></a>
+                <a :href="info.website"><p class="text-lg px-10 py-3 hover:bg-gray-700 active:bg-gray-500 rounded-3xl bg-gray-900 text-white">Take a look here!</p></a>
               </div>
             </div>
           </div>
@@ -55,4 +57,15 @@
   
   <script setup>
   const { info } = defineProps(['info'])
+  import AOS from "aos";
+import "aos/dist/aos.css";
+
+
+// Initialize AOS for entrance animations
+onMounted(() => {
+  AOS.init({
+    duration: 1500, // Duration of the entrance animation (ms)
+    once: true, // Run animation only once
+  });
+});
   </script>
