@@ -9,9 +9,10 @@ const navigation = [
   { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
   { name: 'Skills', href: '/uses', current: route.name == 'uses' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
-  { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
+  { name: 'Web Apps', href: '/webdev', current: route.name == 'webdev' },
   { name: 'Mobile Apps', href: '/apps', current: route.name == 'apps' },
-  { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
+  { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
+
 ]
 </script>
 

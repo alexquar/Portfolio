@@ -1,10 +1,9 @@
--fix page headers
--add to plog 
--add new skills 
--animate wave
+-fix page headers *next
+-add to blog 
+-add new skills     *next
+-animate wave   //done
 -animate skills  //done
 -add apps 
--improve proj styling 
+-improve proj styling //done
 -improve text 
--add communolearn
 -fix resume link
