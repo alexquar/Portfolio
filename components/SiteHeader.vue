@@ -7,11 +7,12 @@ const route = useRoute();
 const navigation = [
   { name: 'Home', href: '/', current: route.name == 'index' },
   { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
-  { name: 'About', href: '/uses', current: route.name == 'uses' },
+  { name: 'Skills', href: '/uses', current: route.name == 'uses' },
   { name: 'Blog', href: '/blog', current: route.name.includes('blog') },
   { name: 'Repositories', href: '/projects', current: route.name == 'projects' },
   { name: 'CommunoLearn', href: '/communoLearn', current: route.name == 'communoLearn' },
   { name: 'Mobile Apps', href: '/apps', current: route.name == 'apps' },
+  { name: 'Web-Dev Projects', href: '/webdev', current: route.name == 'webdev' },
 ]
 </script>
 

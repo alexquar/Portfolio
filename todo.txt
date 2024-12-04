@@ -1,0 +1,10 @@
+-fix page headers
+-add to plog 
+-add new skills 
+-animate wave
+-animate skills  //done
+-add apps 
+-improve proj styling 
+-improve text 
+-add communolearn
+-fix resume link
