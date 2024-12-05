@@ -26,7 +26,31 @@
   import ufinance from '../assets/ufinance.png'
   import ublog from '../assets/ublog.png'
   import geesespotter from '../assets/geesespotter.png'
+  import communoLearn from '../assets/communoLearn.png'
   const infos = [{
+    name: 'CommunoLearn',
+    website: 'https://communo-learn.vercel.app/',
+    image:  {
+        src: communoLearn,
+        alt: 'CommunoLearn ss',
+      },
+    tools: [
+      'Next.js',
+      'React',
+      'tRPC',
+      'Prisma',
+      'Zod',
+      'TypeScript',
+      'TailwindCSS',
+      'GCAuth',
+      'websockets',
+      'github actions',
+      'Vercel hosting',
+      'Vercel blob storage'
+    ],
+    details:
+      'A Collaborative Study/Planning web app designed for anyone who want to plan study sessions, hang out or collaborate with friends or peers. The core features will involve scheduling meetings, creating tasks, sharing documents, tracking projects, and more. This app is centered around communites for productivity and is built using a modified T3 stack. This is a full stack application featuring auth through google cloud and messaging through websockets.',
+  },{
     name: 'U Help',
     website: 'https://master--u-help.netlify.app/login',
     image:  {

@@ -1,64 +1,66 @@
+
 <template>
-    <div class="relative w-[304px]">
-      <!-- Image -->
-      <img class="rounded-3xl" src="../assets/mobile/Screenshot 2024-09-25 at 11.31.33 PM.png" alt="Image" />
+    <div class="bg-white py-5"
+    data-aos="fade-up"
+    >
+      <div class="pt-6 grid grid-cols-5 gap-4 place-items-center">
+        <div class="md:col-span-3 col-span-5 md:border-r md:border-gray-200">
+        <!-- Product info -->
+        <div class="max-w-2xl pb-8 pt-10 place-content-center lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:pb-10 lg:pt-16">
+          <div class="lg:col-span-2">
+            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ info.name }}</h1>
+          </div>
+        </div>
   
-      <!-- Top-left button -->
-      <button
-        class="absolute top-0 left-0 p-2 bg-gray-900 rounded-full text-white shadow-md"
-      >
-      <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7071 4.29289C12.0976 4.68342 12.0976 5.31658 11.7071 5.70711L6.41421 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H6.41421L11.7071 18.2929C12.0976 18.6834 12.0976 19.3166 11.7071 19.7071C11.3166 20.0976 10.6834 20.0976 10.2929 19.7071L3.29289 12.7071C3.10536 12.5196 3 12.2652 3 12C3 11.7348 3.10536 11.4804 3.29289 11.2929L10.2929 4.29289C10.6834 3.90237 11.3166 3.90237 11.7071 4.29289Z" fill="#fff"></path> </g></svg>
-      </button>
+          <!-- Options -->
+          <div class="py-10 lg:col-span-2 lg:col-start-1  lg:pb-16 lg:pr-8 lg:pt-6">
+            <!-- Description and details -->
+            <div>
+              <h3 class="sr-only">Description</h3>
   
-      <!-- Top-right button -->
-      <button
-        class="absolute top-0 right-0 p-2 bg-gray-900 rounded-full text-white shadow-md"
-      >
-      <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#fff"></path> </g></svg>      </button>
-    </div>
+              <div class="space-y-6">
+                <p class="text-base text-gray-900">{{ info.details }}</p>
+              </div>
+            </div>
+  
+            <div class="mt-10">
+              <h3 class="text-sm font-medium text-gray-900">Used to make:</h3>
+  
+              <div class="mt-4">
+                <ul role="list" class="space-y-3 flex flex-col text-sm">
+                  <li v-for="tool in info.tools" :key="tool" class="text-sm w-fit transform transition duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90 font-semibold inline-block py-2 px-4 rounded-3xl bg-blue-500 hover:bg-blue-300 uppercase">
+                    <span class="text-white">{{ tool }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="mt-10">
+              <div class="flex justify-center">
+                <a :href="info.website"><p class="text-lg px-10 py-3 hover:bg-gray-700 active:bg-gray-500 rounded-3xl bg-gray-900 text-white">Take a look here!</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-2 hidden md:block">
+          <mobilecarousel :images="info.image" />
+        </div>
+        </div>
+        </div>
   </template>
   
   <script setup>
-  import { ref } from "vue";
+  const { info } = defineProps(['info'])
   import AOS from "aos";
-  import "aos/dist/aos.css";
-  
-  // Props
-  const { info } = defineProps(["info"]);
-  
-  // Carousel logic
-  const currentIndex = ref(0);
-  
-  const nextSlide = () => {
-    currentIndex.value = (currentIndex.value + 1) % info.images.length;
-  };
-  
-  const prevSlide = () => {
-    currentIndex.value =
-      (currentIndex.value - 1 + info.images.length) % info.images.length;
-  };
-  
-  // Initialize AOS animations
-  onMounted(() => {
-    AOS.init({
-      duration: 1500,
-      once: true,
-    });
+import "aos/dist/aos.css";
+
+
+// Initialize AOS for entrance animations
+onMounted(() => {
+  AOS.init({
+    duration: 1500, // Duration of the entrance animation (ms)
+    once: true, // Run animation only once
   });
+});
   </script>
-  
-  <style scoped>
-  /* Ensure the images fit the container without distortion */
-  img {
-    object-fit: contain;
-    object-position: center;
-  }
-  
-  /* Make carousel responsive for different screens */
-  @media (max-width: 768px) {
-    .height-70vh {
-      height: 60vh; /* Reduce height for smaller devices */
-    }
-  }
-  </style>
   

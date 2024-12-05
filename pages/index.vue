@@ -29,7 +29,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
       <p class="text-lg py-2">
         To view my technical skills and to learn about this portfolio please view the "About" page or check out my resume linked below. I'm sorry if the formatting is less than perfect on the online version!
       </p>
-      <p class="text-lg text-center py-3 my-10">
+      <p class="text-lg text-center animate-wiggles py-3 my-10">
         <a href="https://docs.google.com/document/d/e/2PACX-1vTb15Djw-SYk99io1jrWil-gTTHBseXcH1ALEoPjo3Kg3KSiybar_5pjFR11RbqtA/pub" class="bg-gray-900 text-white border-none hover:bg-gray-700 active:bg-gray-500  py-3 px-10 rounded-3xl">My Resume</a>
         
       </p>

@@ -3,7 +3,7 @@
 -add new skills     //done
 -animate wave   //done
 -animate skills  //done
--add apps                        *next
+-add apps        //done
 -improve proj styling //done
 -add communoLearn               *next
 -improve text 
