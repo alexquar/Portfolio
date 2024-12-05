@@ -5,9 +5,22 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
     .limit(3)
     .find()
 )
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const props = defineProps(['posts']);
+
+// Initialize AOS for entrance animations
+onMounted(() => {
+  AOS.init({
+    duration: 1000, // Duration of the entrance animation (ms)
+    once: true, // Run animation only once
+  });
+});
 </script>
 
 <template>
+  <div data-aos="fade-up" >
   <section class="mx-4 md:mx-0 ">
     <h1 class="text-5xl font-bold mt-10 md:mt-20">👋🏻 Hey, I'm Alex Quarrie!</h1>
     <p class="text-base text-gray-900 p-2 italic">Computer Engineering Student at the University of Waterloo.</p>
@@ -35,6 +48,7 @@ const { data: posts } = await useAsyncData('latest-posts', () =>
     </div>
     <img src="~/assets/hi.png" class="w-1/2  my-auto md:max-w-sm p-8 mx-auto" />
   </section>
+  </div>
 
   <section class="mt-5">
     <h2 class="text-3xl text-center md:text-start font-bold mt-8">Latest Blog Posts</h2>
