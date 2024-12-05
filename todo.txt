@@ -5,6 +5,6 @@
 -animate skills  //done
 -add apps        //done
 -improve proj styling //done
--add communoLearn               *next
--improve text 
--fix resume link
+-add communoLearn              //done
+-improve text                   //done
+-fix resume link                *next

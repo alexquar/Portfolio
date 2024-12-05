@@ -52,7 +52,7 @@ onMounted(() => {
       data-aos="fade-up"
       v-for="project in data?.viewer.repositories.nodes"
       :key="project.id"
-      class="p-8 border-4 my-4 rounded-lg hover:bg-gray-50"
+      class="p-8 border-4 hover:animate-wiggle hover:animate-twice hover:animate-duration-2000 hover:animate-ease-in-out my-4 rounded-lg"
     >
       <a :href="project.url" target="_blank">
         <h2 class="text-2xl text-blue-500 font-semibold mb-2 hover:underline hover:animate-pulse">
