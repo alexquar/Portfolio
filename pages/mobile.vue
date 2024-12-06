@@ -17,7 +17,7 @@
   {
     name: "What's that dog",
     website: 'https://github.com/alexquar/WhatIsThatDog',
-    image: ["/mobile/foods.png", "/mobile/fooditem.png", "/mobile/food1.png","/mobile/foodprofile.png"],
+    image: ["/mobile/home.png", "/mobile/gryff.png", "/mobile/husky.png","/mobile/pug.png","/mobile/sheperd.png","/mobile/takepic.png", "/mobile/gryffpresub.png", "/mobile/emptysubmit.png", "/mobile/abouttop.png", "/mobile/aboutbottom.png"],
     details:
       'Dog breed classifier created with React Native. Users can take a picture of a dog and the app will classify the breed. The app uses a custom trained model with Pytorch to classify the breed. The app also uses a Flask server to handle the image processing.',
     tools: [
