@@ -4,8 +4,8 @@
       <img
         v-if="images[count]"
         :key="images[count]"
-        class="rounded-3xl h-full w-full animate-fade animate-once animate-duration-[2000ms] animate-ease-in-out"
-        :class="prevCount < count ? 'animate-fade animate-once animate-duration-[2000ms] animate-ease-in-out' : 'animate-fade animate-once animate-duration-[2000ms] animate-ease-in-out'"
+        class="rounded-3xl h-full w-full animate-fade animate-once animate-duration-[1000ms] animate-ease-in-out"
+        :class="prevCount < count ? 'animate-fade animate-once animate-duration-[1000ms] animate-ease-in-out' : 'animate-fade animate-once animate-duration-[1000ms] animate-ease-in-out'"
 
         :src="images[count]"
       />

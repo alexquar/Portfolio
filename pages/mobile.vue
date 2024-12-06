@@ -46,7 +46,7 @@
   {
     name: 'U Videos',
     website: 'https://github.com/alexquar/U-Videos',
-    image: ["/mobile/foods.png", "/mobile/fooditem.png", "/mobile/food1.png","/mobile/foodprofile.png"],
+    image: ["/mobile/home.jpg", "/mobile/login.jpg", "/mobile/posts.png","/mobile/search.png","/mobile/submit.png","/mobile/upload.png"],
     details:
       'AI Video sharing app created with React Native. Users can upload videos and view other users videos. Videos and User data are stored on an AppWrite postgresql database and document storage . Features a full authentication system with email verification accomplished through AppWrite.',
     tools: [
