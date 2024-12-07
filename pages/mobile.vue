@@ -28,7 +28,7 @@
       "Numpy",
         "Pandas",
         "Matplotlib",
-        "PythonAnywhere (deploy)",
+        "AWS - EC2",
         "Python and TypeScript"
     ],
   },
