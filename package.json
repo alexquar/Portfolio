@@ -22,6 +22,7 @@
     "@headlessui/vue": "^1.7.13",
     "@heroicons/vue": "^2.0.18",
     "aos": "^2.3.4",
+    "nuxt-app": "file:",
     "tailwindcss-animated": "^1.1.2"
   }
 }
