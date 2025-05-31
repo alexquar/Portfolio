@@ -27,6 +27,7 @@
   import ublog from '../assets/ublog.png'
   import geesespotter from '../assets/geesespotter.png'
   import communoLearn from '../assets/communoLearn.png'
+  import diary from '../assets/diary.png'
   const infos = [{
     name: 'CommunoLearn',
     website: 'https://communo-learn.vercel.app/',
@@ -99,6 +100,23 @@
       'MongoDB (Atlas & Mongoose)',
       'JWTS (Auth)',
     ],
+  },
+  {
+    name: 'UDiary',
+    website: 'https://github.com/alexquar/Diary_App',
+    image:  {
+        src: diary,
+        alt: 'UDiary ss',
+      },
+    tools: [
+      'C#',
+      '.Net',
+      'SQL Server',
+      'Entity Framework',
+      'Javascript',
+    ],
+    details:
+      'A basic diary app allowing you to save your diary entries with a title, date and description. The core features inlvolve full CRUD functionality, allowing you to create, read, update and delete entries. This is a full stack application with a C# backend using .Net and SQL Server for the database. The frontend is built with vanilla javascript and Razor pages with the Entity Framework for the ORM.',
   },
   {
     name: 'U Projects',
