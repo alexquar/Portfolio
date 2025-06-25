@@ -27,6 +27,7 @@
   import ublog from '../assets/ublog.png'
   import geesespotter from '../assets/geesespotter.png'
   import communoLearn from '../assets/communoLearn.png'
+  import uwatchlist from '../assets/uwatchlist.png'
   import diary from '../assets/diary.png'
   const infos = [{
     name: 'CommunoLearn',
@@ -52,38 +53,21 @@
     details:
       'A Collaborative Study/Planning web app designed for anyone who want to plan study sessions, hang out or collaborate with friends or peers. The core features will involve scheduling meetings, creating tasks, sharing documents, tracking projects, and more. This app is centered around communites for productivity and is built using a modified T3 stack. This is a full stack application featuring auth through google cloud and messaging through websockets.',
   },{
-    name: 'U Help',
-    website: 'https://master--u-help.netlify.app/login',
+    name: 'U Watchlist',
+    website: 'https://github.com/alexquar/Go-webserver',
     image:  {
-        src: helpphoto,
-        alt: 'U Help ss',
+        src: uwatchlist,
+        alt: 'Uwatchlist ss',
       },
     tools: [
-      'React',
-      'Next.js',
-      'TailwindCSS',
-      'Supabase (auth and db)',
-      'Netlify',
+      'Golang',
+      'HTMX',
+      'SQLite',
+      'SQL',
+      'Bootstrap',
     ],
     details:
-      'Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
-  },{
-    name: 'Geese Spotter',
-    website: 'https://geesespotter.co',
-    image:  {
-        src: geesespotter,
-        alt: 'Geese spotter ss',
-      },
-    tools: [
-      'React',
-      'TailwindCSS',
-      'Ruby on Rails',
-      'Postgresql',
-      'Google Maps API',
-      'Netlify and Render',
-    ],
-    details:
-      'Project for hawkhacks 2024. Geesespotter can help you easily figure out what is going on around the university of Waterloo campus to find new friends and participate in planned or spontaneous activities. We felt that with such a large and disconnected campus it was difficult to know what was going on and what you could get involved with. Our goal was to provide students with a way to post their activities online and connect with others. The backend rests when inactive so it will take a minute to signup/login.',
+      'A pretty simple go webserver that leverages full CRUD actions to allow users to keep an up to date movie watchlist. Based on the go net/http package using htmx and bootstrap for the UI and embedded sqlite with raw sql querries. User sessions are not stored using a true auth system but tracked with simple middleware and UUIDs stored in cookies.',
   },{
     name: 'U Fitness',
     website: 'https://github.com/alexquar/U-fitness',
@@ -102,7 +86,25 @@
     ],
   },
   {
-    name: 'UDiary',
+    name: 'Geese Spotter',
+    website: 'https://geesespotter.co',
+    image:  {
+        src: geesespotter,
+        alt: 'Geese spotter ss',
+      },
+    tools: [
+      'React',
+      'TailwindCSS',
+      'Ruby on Rails',
+      'Postgresql',
+      'Google Maps API',
+      'Netlify and Render',
+    ],
+    details:
+      'Project for hawkhacks 2024. Geesespotter can help you easily figure out what is going on around the university of Waterloo campus to find new friends and participate in planned or spontaneous activities. We felt that with such a large and disconnected campus it was difficult to know what was going on and what you could get involved with. Our goal was to provide students with a way to post their activities online and connect with others. The backend rests when inactive so it will take a minute to signup/login.',
+  },
+  {
+    name: 'U Diary',
     website: 'https://github.com/alexquar/Diary_App',
     image:  {
         src: diary,
@@ -236,6 +238,23 @@
       'Firebase Auth',
       'Firebase Hosting',
     ]
+  },
+  {
+    name: 'U Help',
+    website: 'https://master--u-help.netlify.app/login',
+    image:  {
+        src: helpphoto,
+        alt: 'U Help ss',
+      },
+    tools: [
+      'React',
+      'Next.js',
+      'TailwindCSS',
+      'Supabase (auth and db)',
+      'Netlify',
+    ],
+    details:
+      'Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
   },
     {
     name: 'U Chat',
