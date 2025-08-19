@@ -9,8 +9,11 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useHead } from 'nuxt/app'
 const title = ref('Alex\'s portfolio')
 const description = ref('Welcome all to my portfolio!')
+const des = ref('This is my personal portfolio where I showcase my projects and skills.')
 import hi from './assets/hi.png'
 useHead({
   title,

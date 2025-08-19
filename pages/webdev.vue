@@ -12,7 +12,7 @@
   </template>
   
   <script setup>
- import uexchange from '../assets/uexchange.png'
+  import uexchange from '../assets/uexchange.png'
   import uproj from '../assets/uproj.png'
   import helpphoto from '../assets/U-help.png'
   import umusic from '../assets/umusic.png'
@@ -119,7 +119,20 @@
     ],
     details:
       'A basic diary app allowing you to save your diary entries with a title, date and description. The core features inlvolve full CRUD functionality, allowing you to create, read, update and delete entries. This is a full stack application with a C# backend using .Net and SQL Server for the database. The frontend is built with vanilla javascript and Razor pages with the Entity Framework for the ORM.',
-  },
+  },{
+    name: 'Custom Rust Webserver',
+    website: 'https://github.com/alexquar/Rust-Custom-Webserver',
+    image:  {
+        src: uwatchlist,
+        alt: 'Uwatchlist ss',
+      },
+    tools: [
+      'Rust',
+      'HTML',
+    ],
+    details:
+      'A fully custom webserver built with Rust. This is a simple webserver that can serve static files and handle basic routing. It is completely from scatch and uses a threadpool to handle multiple requests at once. This was just made a simple learning activity to understand the lower levels of webservers, concurrency and threading.',
+    },
   {
     name: 'U Projects',
     website: 'https://u-projects-management.web.app/login',
