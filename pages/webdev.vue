@@ -68,14 +68,14 @@
     details:
       'A pretty simple go webserver that leverages full CRUD actions to allow users to keep an up to date movie watchlist. Based on the go net/http package using htmx and bootstrap for the UI and embedded sqlite with raw sql querries. User sessions are not stored using a true auth system but tracked with simple middleware and UUIDs stored in cookies.',
   },{
-    name: 'U Fitness',
+    name: 'Fitness App',
     website: 'https://github.com/alexquar/U-fitness',
     image:  {
         src: ufitness,
         alt: 'U fitness ss',
       },
     details:
-      'Fullstack workout creation site built with MERN stack. MongoDB (atlas with mongoose), ExpressJS, ReactJS, NodeJS and JWTs for Auth. Users can signup/login then create exercises with sets/reps and amount to create workouts.',
+      'This is not a fully fledged project and was just built while learning the more intracate ideas of full stack development, thus the UI and finer logic should be taken with a grain of salt. It is a fullstack workout creation site built with MERN stack. MongoDB (atlas with mongoose), ExpressJS, ReactJS, NodeJS and JWTs for Auth. Users can signup/login then create exercises with sets/reps and amount to create workouts.',
     tools: [
       'React',
       'Node.Js',
@@ -132,23 +132,24 @@
     details:
       'A fully custom webserver built with Rust. This is a simple webserver that can serve static files and handle basic routing. It is completely from scatch and uses a threadpool to handle multiple requests at once. This was just made a simple learning activity to understand the lower levels of webservers, concurrency and threading.',
     },
+  // {
+  //   name: 'U Projects',
+  //   website: 'https://u-projects-management.web.app/login',
+  //   image:  {
+  //       src: uproj,
+  //       alt: 'U Projects',
+  //     },
+  //   details:
+  //     'Project Management system built using React and Firebase (auth, storage, firestore). Allows users to login/signup then create projects and add users to them. Users can then comment on these projects. Users can see all online/offline users.',
+  //   tools: [
+  //     'React',
+  //     'Firebase Auth',
+  //     'Firebase Storage',
+  //     'Firebase Firestore',
+  //     'Firebase Hosting',
+  //   ],
+  // },
   {
-    name: 'U Projects',
-    website: 'https://u-projects-management.web.app/login',
-    image:  {
-        src: uproj,
-        alt: 'U Projects',
-      },
-    details:
-      'Project Management system built using React and Firebase (auth, storage, firestore). Allows users to login/signup then create projects and add users to them. Users can then comment on these projects. Users can see all online/offline users.',
-    tools: [
-      'React',
-      'Firebase Auth',
-      'Firebase Storage',
-      'Firebase Firestore',
-      'Firebase Hosting',
-    ],
-  },{
     name: 'U Music',
     website: 'https://umusic-123.web.app/login',
     image:  {
@@ -165,23 +166,23 @@
       'Firebase Hosting',
     ],
   },
-  {
-    name: 'U Exchange',
-    website: 'https://u-exchange.netlify.app/',
-    image:  {
-        src: uexchange,
-        alt: 'U exchange ss',
-      },
-    details:
-      'Exchange rate site built using Next and TailwindCSS. This utilizes CSS3, HTML5, React with JS. This makes use of the currencyapi and allows users to access current and historic data for 100+ curencies. Use instructions available on the home page. ',
-    tools: [
-      'Next',
-      '(React)',
-      'TailwindCSS',
-      'Currency API',
-      'Netlify',
-    ],
-  },
+  // {
+  //   name: 'U Exchange',
+  //   website: 'https://u-exchange.netlify.app/',
+  //   image:  {
+  //       src: uexchange,
+  //       alt: 'U exchange ss',
+  //     },
+  //   details:
+  //     'Exchange rate site built using Next and TailwindCSS. This utilizes CSS3, HTML5, React with JS. This makes use of the currencyapi and allows users to access current and historic data for 100+ curencies. Use instructions available on the home page. ',
+  //   tools: [
+  //     'Next',
+  //     '(React)',
+  //     'TailwindCSS',
+  //     'Currency API',
+  //     'Netlify',
+  //   ],
+  // },
   {
     name: 'The Local Weather',
     website: 'https://u-weather-net.web.app/',
@@ -199,23 +200,23 @@
       'Firebase Hosting',
     ],
   },
-  {
-    name: 'U Blog',
-    website: 'https://github.com/alexquar/U-blog',
-    image:  {
-        src: ublog,
-        alt: 'U blog ss',
-      },
-    details:
-      'Public blogging site made using NodeJs, ExpressJs, EJs, MongoDB and HTML/CSS. Uses Nodemon and Mongoose to make the process easier. Users can create blogs about whatever they want, just add a title, snippet and body to create your first blog.',
-    tools: [
-      'EJS',
-      'Node.Js',
-      'Express.Js',
-      'MongoDB (Atlas & Mongoose)',
-      'CSS3',
-    ],
-  },
+  // {
+  //   name: 'U Blog',
+  //   website: 'https://github.com/alexquar/U-blog',
+  //   image:  {
+  //       src: ublog,
+  //       alt: 'U blog ss',
+  //     },
+  //   details:
+  //     'Public blogging site made using NodeJs, ExpressJs, EJs, MongoDB and HTML/CSS. Uses Nodemon and Mongoose to make the process easier. Users can create blogs about whatever they want, just add a title, snippet and body to create your first blog.',
+  //   tools: [
+  //     'EJS',
+  //     'Node.Js',
+  //     'Express.Js',
+  //     'MongoDB (Atlas & Mongoose)',
+  //     'CSS3',
+  //   ],
+  // },
   {
     name: 'U Shop',
     website: 'https://github.com/alexquar/U-shop',
@@ -266,73 +267,74 @@
       'Netlify',
     ],
     details:
-      'Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
+      'This isn\'t a fully working project it was just built to learn supabase. This is a Ticketing system built with Next, Tailwind and Supabase, along with some other tools. Users can signup/login and then view other tickets/create tickets. Tickets take a title, body and urgency. Users can delete tickets if they created them. More features to come!',
   },
-    {
-    name: 'U Chat',
-    website: 'https://learning-38e55.web.app/',
-    image:  {
-        src: uchat,
-        alt: 'U chat ss',
-      },
-    details:
-      'Global chatroom application built with Vue and Firebase. Users can login or signup and are then free to access a global chatroom that all authenicated users can send messages to. Date formating is done with date-fns and styling with pure CSS.',
-    tools: [
-      'Vue',
-      'CSS3',
-      'Firebase firestore',
-      'Firebase Auth',
-      'Firebase Hosting',
-    ],
-  }, {
-    name: 'U Finance',
-    website: 'https://u-finance-app.web.app/login',
-    image:  {
-        src: ufinance,
-        alt: 'U finance ss',
-      },
-    details:
-      'Finance app build with React and Firebase. Users can login/signup then add transactions to their tracker. You can only view your own transactions and delete them whenever you want. New features like insights and budgeting to come.',
-    tools: [
-      'React',
-      'CSS3',
-      'Firebase firestore',
-      'Firebase Auth',
-      'Firebase Hosting',
-    ],
-  },
-  {
-    name: 'U Books',
-    website: 'https://reading-list-web.web.app/login',
-    image:  {
-        src: ubooks,
-        alt: 'U books ss',
-      },
-    details:
-      'Simple reading list app to store books you\'re looking to read. Requires logon/signup. Built using Vue, CSS3 and Firebase9 (firestore, auth, hosting). Can delete and favourite your own books as well as take a look at what others are reading and add their books to your list.',
-    tools: [
-      'Vue',
-      'CSS3',
-      'Firebase Firestore',
-      'Firebase Auth',
-      'Firebase Hosting',
-    ],
-  },
-  {
-    name: 'U Img',
-    website: 'https://img-u-social.web.app/login',
-    image:  {
-        src: uimg,
-        alt: 'U img ss',
-      },
-    details:
-      'Instagram like social media app build with firebase and Vue. Users can signup/login then share their pictures with a caption. User cam view their profile and delete their own pictures as well as use the global search to check out other users profiles.'
-    ,tools: [
-      'Vue',
-      'CSS3',
-      'Firebase Firestore',
-      'Firebase Auth',
-      'Firebase Hosting',
-    ],
-  },]
+    // {
+    // name: 'U Chat',
+    // website: 'https://learning-38e55.web.app/',
+    // image:  {
+    //     src: uchat,
+    //     alt: 'U chat ss',
+    //   },
+    // details:
+    //   'Global chatroom application built with Vue and Firebase. Users can login or signup and are then free to access a global chatroom that all authenicated users can send messages to. Date formating is done with date-fns and styling with pure CSS.',
+    // tools: [
+    //   'Vue',
+    //   'CSS3',
+    //   'Firebase firestore',
+    //   'Firebase Auth',
+    //   'Firebase Hosting',
+    // ],
+  // }, {
+  //   name: 'U Finance',
+  //   website: 'https://u-finance-app.web.app/login',
+  //   image:  {
+  //       src: ufinance,
+  //       alt: 'U finance ss',
+  //     },
+  //   details:
+  //     'Finance app build with React and Firebase. Users can login/signup then add transactions to their tracker. You can only view your own transactions and delete them whenever you want. New features like insights and budgeting to come.',
+  //   tools: [
+  //     'React',
+  //     'CSS3',
+  //     'Firebase firestore',
+  //     'Firebase Auth',
+  //     'Firebase Hosting',
+  //   ],
+  // },
+  // {
+  //   name: 'U Books',
+  //   website: 'https://reading-list-web.web.app/login',
+  //   image:  {
+  //       src: ubooks,
+  //       alt: 'U books ss',
+  //     },
+  //   details:
+  //     'Simple reading list app to store books you\'re looking to read. Requires logon/signup. Built using Vue, CSS3 and Firebase9 (firestore, auth, hosting). Can delete and favourite your own books as well as take a look at what others are reading and add their books to your list.',
+  //   tools: [
+  //     'Vue',
+  //     'CSS3',
+  //     'Firebase Firestore',
+  //     'Firebase Auth',
+  //     'Firebase Hosting',
+  //   ],
+  // },
+  // {
+  //   name: 'U Img',
+  //   website: 'https://img-u-social.web.app/login',
+  //   image:  {
+  //       src: uimg,
+  //       alt: 'U img ss',
+  //     },
+  //   details:
+  //     'Instagram like social media app build with firebase and Vue. Users can signup/login then share their pictures with a caption. User cam view their profile and delete their own pictures as well as use the global search to check out other users profiles.'
+  //   ,tools: [
+  //     'Vue',
+  //     'CSS3',
+  //     'Firebase Firestore',
+  //     'Firebase Auth',
+  //     'Firebase Hosting',
+  //   ],
+  // },
+]
   </script>
