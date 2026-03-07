@@ -1,85 +1,70 @@
+<script setup lang="ts">
+interface MobileProject {
+  name: string
+  website: string
+  image: string[]
+  details: string
+  tools: string[]
+}
 
-<template>
-    <div class="bg-white mt-10 md:mt-20">
-      <div class="">
-        <h1 class="text-center mb-5 text-7xl font-serif mx-5 md:mx-0">My Mobile Apps</h1>       
-       <div v-for="info in infos" :key="info.name"> 
-        <mobileproj class="my-3" :info="info" />
-        <hr class="my-2">
-        </div>
-        </div>
-        </div>
-  </template>
-  
-  <script setup>
-
-  const infos = [
+const infos: MobileProject[] = [
   {
-    name: "What's that dog",
+    name: "What's That Dog",
     website: 'https://github.com/alexquar/WhatIsThatDog',
-    image: ["/mobile/home.png", "/mobile/gryff.png", "/mobile/husky.png","/mobile/huskypost.png","/mobile/pug.png","/mobile/socialtop.png","/mobile/socialbottom.png","/mobile/picture.png", "/mobile/gryffpresub.png", "/mobile/emptysubmit.png"],
-    details:
-      'Dog breed classifier created with React Native. Users can take a picture of a dog and the app will classify the breed. The app uses a custom trained model with Pytorch to classify the breed. The app also uses a Flask server to handle the image processing.',
-    tools: [
-      'Expo',
-      'React Native',
-      "Flask",
-      "Pytorch",
-      "Numpy",
-        "Pandas",
-        "Matplotlib",
-        "Docker",
-        "AWS - DocumentDB",
-        "AWS - S3",
-        "AWS - ECS & Fargate",
-        "Python and TypeScript"
+    image: [
+      '/mobile/home.png',
+      '/mobile/gryff.png',
+      '/mobile/husky.png',
+      '/mobile/huskypost.png',
+      '/mobile/pug.png',
+      '/mobile/socialtop.png',
+      '/mobile/socialbottom.png',
+      '/mobile/picture.png',
+      '/mobile/gryffpresub.png',
+      '/mobile/emptysubmit.png'
     ],
-  },
-  {
-    name: 'Menu App',
-    website: 'https://github.com/alexquar/Mobile-Apps/tree/main/MenuApp',
-    image: ["/mobile/foods.png", "/mobile/fooditem.png", "/mobile/food1.png","/mobile/foodprofile.png"],
     details:
-      'Food ordering site created with SwiftUI. Users can save their preferences to the app using app storage. Users can add items to their cart and then checkout. Menu Items are fetched from web server using async await.',
-    tools: [
-      'Swift',
-      'SwiftUI',
-    ],
+      'Dog breed classifier built with React Native. Users capture a dog image and the app sends it to a Flask API backed by a custom PyTorch model.',
+    tools: ['React Native', 'Expo', 'Flask', 'PyTorch', 'Docker', 'AWS', 'TypeScript', 'Python']
   },
   {
     name: 'U Videos',
     website: 'https://github.com/alexquar/U-Videos',
-    image: ["/mobile/home.jpg", "/mobile/login.jpg", "/mobile/posts.png","/mobile/search.png","/mobile/submit.png","/mobile/upload.png"],
+    image: ['/mobile/home.jpg', '/mobile/login.jpg', '/mobile/posts.png', '/mobile/search.png', '/mobile/submit.png', '/mobile/upload.png'],
     details:
-      'AI Video sharing app created with React Native. Users can upload videos and view other users videos. Videos and User data are stored on an AppWrite postgresql database and document storage . Features a full authentication system with email verification accomplished through AppWrite.',
-    tools: [
-      'NativeWindCSS',
-      'Expo',
-        'React Native',
-        'AppWrite',
-        'JavaScript and TypeScipt',
-    ],
-  },{
-    name: 'The Local Weather Mobile',
-    website: 'https://github.com/alexquar/Mobile-Apps/tree/main/BarcodeScanner',
-    image: ["/mobile/weatherhome.png", "/mobile/weatherdark.png"],
-    details:
-      'Barcode scanning app created with SwiftUI. Users can scan barcodes and use a webviewer to find results. Barcode scanning is done with camera integrations through UIKit.',
-    tools: [
-      'Swift',
-      'SwiftUI',
-    ],
+      'AI video sharing app built with React Native and Appwrite. Includes authentication, uploads, and feed/discovery views.',
+    tools: ['React Native', 'Expo', 'Appwrite', 'NativeWind', 'TypeScript', 'JavaScript']
   },
   {
-    name: 'Barcode Scanner',
+    name: 'The Local Weather Mobile',
     website: 'https://github.com/alexquar/Mobile-Apps/tree/main/weatherApp',
-    image: ["/mobile/barcode.png"],
+    image: ['/mobile/weatherhome.png', '/mobile/weatherdark.png'],
     details:
-      'Weather app created with SwiftUI. Users can search for weather in their area and see the forecast for the week. Can be displayed in light/day or dark/night mode.',
-    tools: [
-      'Swift',
-      'SwiftUI',
-    ],
+      'Weather app built with SwiftUI featuring search, forecast views, and day/night mode.',
+    tools: ['Swift', 'SwiftUI']
   },
+  {
+    name: 'Menu App',
+    website: 'https://github.com/alexquar/Mobile-Apps/tree/main/MenuApp',
+    image: ['/mobile/foods.png', '/mobile/fooditem.png', '/mobile/food1.png', '/mobile/foodprofile.png'],
+    details:
+      'Food ordering app built with SwiftUI and async data fetching, including cart and profile flows.',
+    tools: ['Swift', 'SwiftUI']
+  }
 ]
-  </script>
+</script>
+
+<template>
+  <div class="mt-10 md:mt-16">
+    <div class="glass-card rounded-3xl p-8">
+      <h1 class="text-4xl font-semibold text-white sm:text-5xl">Mobile Apps</h1>
+      <p class="mt-4 text-lg text-slate-300">Curated mobile projects focused on product quality, usability, and real end-to-end implementation.</p>
+    </div>
+
+    <div class="mt-10 space-y-6">
+      <div v-for="info in infos" :key="info.name">
+        <mobileproj :info="info" />
+      </div>
+    </div>
+  </div>
+</template>

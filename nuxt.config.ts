@@ -2,19 +2,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxt/content',
     '@nuxtjs/apollo'
   ],
+  css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
-    githubToken: process.env.GITHUB_TOKEN
-  },
-
-  content: {
-    highlight: {
-      theme: 'nord',
-      preload: ['ts','js','css','java','json','bash','vue']
-    }
+    githubToken: process.env.GITHUB_TOKEN || ''
   },
 
   apollo: {
@@ -25,6 +18,10 @@ export default defineNuxtConfig({
       }
     }
   },
+  typescript: {
+    strict: true,
+    typeCheck: false
+  },
 
-  compatibilityDate: '2025-08-29',
+  compatibilityDate: '2025-08-29'
 })

@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+const currentYear = new Date().getFullYear()
+
 const links = [
   { name: 'GitHub', href: 'https://github.com/alexquar', icon: 'entypo-social:github-with-circle' },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-quarrie-81ab3128b/', icon: 'entypo-social:linkedin-with-circle' },
@@ -6,50 +8,34 @@ const links = [
 ]
 </script>
 
-<template> 
-  <div>
-    <div>
-      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path 
-          class="wave-path" 
-          fill="#1f2937" 
-          fill-opacity="1" 
-          d="M0,256L24,245.3C48,235,96,213,144,181.3C192,149,240,107,288,101.3C336,96,384,128,432,138.7C480,149,528,139,576,149.3C624,160,672,192,720,202.7C768,213,816,203,864,165.3C912,128,960,64,1008,48C1056,32,1104,64,1152,90.7C1200,117,1248,139,1296,149.3C1344,160,1392,160,1416,160L1440,160L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
-        ></path>
-      </svg>
-    </div>
-    <footer class="bg-gray-800">
-      <section class="mx-auto max-w-7xl px-2 sm:px-4 lg:py-6 text-gray-300 flex justify-between flex-row">
-        <p class="mt-3 transform transition duration-300 hover:-translate-y-3 hover:scale-110 hover:opacity-90">&copy; Alex Quarrie 2025. All Rights Reserved.</p>
-        <div class="flex flex-row justify-center gap-4 mb-4 mt-2">
-          <a v-for="link in links" :key="link.name" :href="link.href">
-            <Icon 
-              :name="link.icon" 
-              size="1.5rem" 
-              class="text-gray-300 hover:text-gray-300 active:text-gray-400 transform transition duration-300 hover:-translate-y-3 hover:scale-150 hover:opacity-90" 
-            />
-          </a>
+<template>
+  <footer id="contact" class="relative mt-16 pb-10">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="glass-card rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-base font-semibold tracking-wide text-white">Alex Quarrie</p>
+            <p class="text-sm text-slate-300">Built for strong engineering signal: product thinking, execution speed, and quality.</p>
+          </div>
+
+          <div class="flex flex-row items-center gap-3">
+            <a
+              v-for="link in links"
+              :key="link.name"
+              :href="link.href"
+              target="_blank"
+              rel="noopener"
+              class="rounded-full border border-white/15 bg-white/5 p-2.5 text-slate-200 transition hover:-translate-y-0.5 hover:border-white/30 hover:text-white"
+            >
+              <Icon :name="link.icon" size="1.3rem" />
+            </a>
+          </div>
         </div>
-      </section>
-    </footer>
-  </div>
+
+        <div class="mt-6 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.2em] text-slate-400">
+          &copy; {{ currentYear }} Alex Quarrie
+        </div>
+      </div>
+    </section>
+  </footer>
 </template>
-
-<style scoped>
-/* Add animation to the wave path */
-@keyframes wave-animation {
-  0% {
-    d: path("M0,256L24,245.3C48,235,96,213,144,181.3C192,149,240,107,288,101.3C336,96,384,128,432,138.7C480,149,528,139,576,149.3C624,160,672,192,720,202.7C768,213,816,203,864,165.3C912,128,960,64,1008,48C1056,32,1104,64,1152,90.7C1200,117,1248,139,1296,149.3C1344,160,1392,160,1416,160L1440,160L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z");
-  }
-  50% {
-    d: path("M0,288L24,266.7C48,245,96,203,144,181.3C192,160,240,160,288,160C336,160,384,160,432,181.3C480,203,528,245,576,250.7C624,256,672,224,720,208C768,192,816,192,864,208C912,224,960,256,1008,256C1056,256,1104,224,1152,202.7C1200,181.3,1248,160,1296,160C1344,160,1392,160,1416,160L1440,160L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z");
-  }
-  100% {
-    d: path("M0,256L24,245.3C48,235,96,213,144,181.3C192,149,240,107,288,101.3C336,96,384,128,432,138.7C480,149,528,139,576,149.3C624,160,672,192,720,202.7C768,213,816,203,864,165.3C912,128,960,64,1008,48C1056,32,1104,64,1152,90.7C1200,117,1248,139,1296,149.3C1344,160,1392,160,1416,160L1440,160L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z");
-  }
-}
-
-.wave-path {
-  animation: wave-animation 5s infinite ease-in-out;
-}
-</style>

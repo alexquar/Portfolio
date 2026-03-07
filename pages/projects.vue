@@ -1,8 +1,14 @@
-<script setup>
+<script setup lang="ts">
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { computed, onMounted } from 'vue';
+
+// gql is auto-imported by Nuxt Apollo module, but we define the query here
+// If the plugin complains, we use the global declaration
 const query = gql`
   {
     viewer {
-      repositories(first: 42, orderBy: { field: CREATED_AT, direction: DESC }) {
+      repositories(first: 100, orderBy: { field: UPDATED_AT, direction: DESC }) {
         totalCount
         nodes {
           id
@@ -25,46 +31,87 @@ const query = gql`
   }
 `;
 
-const { data } = await useAsyncQuery(query);
+// useAsyncQuery is auto-imported by Nuxt Apollo module
+// @ts-ignore
+const { data } = await useAsyncQuery(query)
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+const featuredRepoNames = new Set([
+  'Boxscore',
+  'CommunoLearn',
+  'WhatIsThatDog',
+  'Go-Custom-Webserver',
+  'Rust-Custom-Webserver',
+  'FlappyBot',
+  'Neural_Networks',
+  'EmeraldCompiler',
+  'SmartBackpack',
+  'U-Videos',
+  'U-shop',
+  'U-help',
+  'U-fitness',
+  'hawkHacks',
+  'Diary_App'
+])
+
+const repositories = computed(
+  () =>
+    (((data.value as { viewer?: { repositories?: { nodes?: Array<Record<string, any>> } } } | null)?.viewer?.repositories?.nodes ??
+      []) as Array<Record<string, any>>).filter((repo) => featuredRepoNames.has(String(repo.name)))
+)
 
 onMounted(() => {
-  AOS.init({
-    duration: 1500, // Duration of the entrance animation (ms)
-    once: true, // Run animation only once
-  });
-});
+  AOS.init({ duration: 900, once: true })
+})
 </script>
 
 <template>
-        <h1 class="text-center mb-5 mt-10 md:mt-20 text-7xl font-serif mx-5 md:mx-0">Repositories</h1>       
-        <p class="text-lg mb-8">
-    Here are some of my projects on
-    <a href="https://github.com/alexquar" class="underline animate-pulse text-blue-500"
-      >GitHub</a
-    >, listed by creation date. Projects range from full stack apps to neural networks to smaller concepts work. Each project is linked in their card. I hope you enjoy
-    having a look at my projects!
-  </p>
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-5 gap-10">
-    <div
-      data-aos="fade-up"
-      v-for="project in data?.viewer.repositories.nodes"
-      :key="project.id"
-      class="p-8 border-4 hover:animate-wiggle hover:animate-twice hover:animate-duration-2000 hover:animate-ease-in-out my-4 rounded-lg"
-    >
-      <a :href="project.url" target="_blank">
-        <h2 class="text-2xl text-blue-500 font-semibold mb-2 hover:underline hover:animate-pulse">
-          {{ project.name }}
-        </h2>
-      </a>
-      <p>{{ project.description }}</p>
-      <p class="mt-3">Created: {{ String(project.createdAt).slice(0, 10) }}</p>
-      <div class="mt-4">
-        <Icon name="system-uicons:eye" size="1.1rem" class="text-blue-500" />
-        Watchers: {{ project.watchers.totalCount }}
-      </div>
+  <div class="mt-10 md:mt-14">
+    <div class="glass-card rounded-3xl p-8" data-aos="fade-up">
+      <h1 class="text-4xl font-semibold text-white sm:text-5xl">GitHub Projects</h1>
+      <p class="mt-4 text-lg text-slate-300">A collection of my open-source work and repositories.</p>
     </div>
-  </section>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <article
+        v-for="repo in repositories"
+        :key="repo.id"
+        class="glass-card flex flex-col justify-between rounded-2xl p-6 transition-all hover:border-white/20 hover:bg-white/[0.07]"
+        data-aos="fade-up"
+      >
+        <div>
+          <div class="flex items-center justify-between">
+            <Icon name="mdi:github" class="text-2xl text-slate-400" />
+            <div class="flex gap-3 text-xs text-slate-400">
+              <span class="flex items-center gap-1">
+                <Icon name="mdi:star-outline" />
+                {{ repo.stargazers.totalCount }}
+              </span>
+              <span class="flex items-center gap-1">
+                <Icon name="mdi:source-fork" />
+                {{ repo.forks.totalCount }}
+              </span>
+            </div>
+          </div>
+          <h2 class="mt-4 text-xl font-semibold text-white">{{ repo.name }}</h2>
+          <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-400">
+            {{ repo.description || 'No description provided.' }}
+          </p>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <span class="text-xs text-slate-500">
+            Updated {{ new Date(repo.createdAt).toLocaleDateString() }}
+          </span>
+          <a
+            :href="repo.url"
+            target="_blank"
+            rel="noopener"
+            class="text-sm font-medium text-sky-400 transition hover:text-sky-300"
+          >
+            View Repo →
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
 </template>

@@ -1,68 +1,58 @@
+<script setup lang="ts">
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { onMounted } from 'vue'
+
+interface ProjectImage {
+  src: string
+  alt: string
+}
+
+interface WebProjectInfo {
+  name: string
+  website: string
+  image: ProjectImage
+  details: string
+  tools: string[]
+}
+
+const props = defineProps<{ info: WebProjectInfo }>()
+
+onMounted(() => {
+  AOS.init({ duration: 900, once: true })
+})
+</script>
 
 <template>
-    <div class="bg-white py-5"
-    data-aos="fade-up"
-    >
-      <div class="pt-6 grid grid-cols-5 gap-4 place-items-center">
-  
-        <div class="md:col-span-2 col-span-5 md:border-r md:border-gray-200">
-        <!-- Product info -->
-        <div class="max-w-2xl pb-8 pt-10 place-content-center lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:pb-10 lg:pt-16">
-          <div class="lg:col-span-2">
-            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ info.name }}</h1>
-          </div>
-        </div>
-  
-          <!-- Options -->
-          <div class="py-10 lg:col-span-2 lg:col-start-1  lg:pb-16 lg:pr-8 lg:pt-6">
-            <!-- Description and details -->
-            <div>
-              <h3 class="sr-only">Description</h3>
-  
-              <div class="space-y-6">
-                <p class="text-base text-gray-900">{{ info.details }}</p>
-              </div>
-            </div>
-  
-            <div class="mt-10">
-              <h3 class="text-sm font-medium text-gray-900">Used to make:</h3>
-  
-              <div class="mt-4">
-                <ul role="list" class="space-y-3 flex flex-col text-sm">
-                  <li v-for="tool in info.tools" :key="tool" class="text-sm w-fit transform transition duration-300 hover:scale-105 hover:shadow-lg hover:opacity-90 font-semibold inline-block py-2 px-4 rounded-3xl bg-blue-500 hover:bg-blue-300 uppercase">
-                    <span class="text-white">{{ tool }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-  
-            <div class="mt-10">
-              <div class="flex justify-center">
-                <a :href="info.website"><p class="text-lg px-10 py-3 hover:bg-gray-700 active:bg-gray-500 rounded-3xl bg-gray-900 text-white">Take a look here!</p></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-3 hidden md:block">
-          <div class="aspect-h-6 aspect-w-5">
-            <img :src="info.image.src" :alt="info.image.alt" class="h-full w-full object-cover object-center" />
-          </div>
-        </div>
-        </div>
-        </div>
-  </template>
-  
-  <script setup>
-  const { info } = defineProps(['info'])
-  import AOS from "aos";
-import "aos/dist/aos.css";
+  <article data-aos="fade-up" class="glass-card overflow-hidden rounded-3xl p-5 sm:p-7">
+    <div class="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-start">
+      <div>
+        <h2 class="text-2xl font-semibold text-white sm:text-3xl">{{ props.info.name }}</h2>
+        <p class="mt-4 text-sm leading-7 text-slate-300 sm:text-base">{{ props.info.details }}</p>
 
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span
+            v-for="tool in props.info.tools"
+            :key="tool"
+            class="rounded-full border border-sky-200/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-100"
+          >
+            {{ tool }}
+          </span>
+        </div>
 
-// Initialize AOS for entrance animations
-onMounted(() => {
-  AOS.init({
-    duration: 1500, // Duration of the entrance animation (ms)
-    once: true, // Run animation only once
-  });
-});
-  </script>
+        <a
+          :href="props.info.website"
+          target="_blank"
+          rel="noopener"
+          class="mt-6 inline-flex rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40"
+        >
+          View Project
+        </a>
+      </div>
+
+      <div class="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70">
+        <img :src="props.info.image.src" :alt="props.info.image.alt" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </article>
+</template>

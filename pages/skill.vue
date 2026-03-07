@@ -1,25 +1,12 @@
-<script setup>
-import { Icon } from "@iconify/vue";
-
-defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
-  icon: {
-    type: String,
-    required: true,
-  },
-});
+<script setup lang="ts">
+defineProps<{ name: string; icon: string }>()
 </script>
 
 <template>
   <li
-    class="flex bg-gray-100 bg-opacity-50 rounded-3xl shadow-md 
-           p-4 py-6 transform transition hover:scale-110 
-           hover:shadow-lg justify-center text-xl items-center my-3"
+    class="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-white/25"
   >
-    <Icon :icon="icon" class="w-8 h-8 mr-3" />
+    <Icon :name="icon" size="1.2rem" class="text-sky-200" />
     {{ name }}
   </li>
 </template>

@@ -6,24 +6,24 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.6.0",
-    "@nuxt/devtools": "^1.6.3",
-    "@nuxtjs/apollo": "^5.0.0-alpha.6",
-    "@nuxtjs/tailwindcss": "^6.7.0",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18",
-    "nuxt": "^3.5.2",
-    "nuxt-icon": "^0.4.1"
+    "@nuxt/devtools": "^1.7.0",
+    "@nuxtjs/apollo": "^5.0.0-alpha.16",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^25.3.5",
+    "nuxt": "^3.21.1",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.5"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.13",
-    "@heroicons/vue": "^2.0.18",
-    "@iconify/vue": "^5.0.0",
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
     "aos": "^2.3.4",
-    "nuxt-app": "file:",
-    "tailwindcss-animated": "^1.1.2"
+    "nuxt-icon": "^0.4.2",
+    "tailwindcss-animated": "^2.0.0"
   }
 }

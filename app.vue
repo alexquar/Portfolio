@@ -1,7 +1,11 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="grid-noise relative flex min-h-screen flex-col text-slate-100">
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="absolute -left-28 top-20 h-80 w-80 animate-floaty rounded-full bg-cyan-400/15 blur-[120px]"></div>
+      <div class="absolute right-0 top-1/3 h-80 w-80 animate-floaty rounded-full bg-sky-500/20 blur-[130px]"></div>
+    </div>
     <SiteHeader />
-    <main class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 grow items-start w-full">
+    <main class="relative mx-auto w-full max-w-7xl grow items-start px-4 sm:px-6 lg:px-8">
       <NuxtPage />
     </main>
     <SiteFooter />
@@ -9,18 +13,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useHead } from 'nuxt/app'
-const title = ref('Alex\'s portfolio')
-const description = ref('Welcome all to my portfolio!')
-const des = ref('This is my personal portfolio where I showcase my projects and skills.')
 import hi from './assets/hi.png'
+
 useHead({
-  title,
-  meta: [{
-    name: 'description',
-    content: description
-  }],
+  title: 'Alex Quarrie | Software Engineer',
+  meta: [
+    {
+      name: 'description',
+      content: 'Software engineering portfolio with full-stack, mobile, and product-focused projects.'
+    }
+  ],
   link: [{ rel: 'icon', type: 'image/x-icon', href: hi }]
 })
 </script>

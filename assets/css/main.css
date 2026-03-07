@@ -1,0 +1,58 @@
+:root {
+  --bg-start: #020617;
+  --bg-mid: #0b1222;
+  --bg-end: #020617;
+  --glass: rgba(10, 18, 34, 0.58);
+  --glass-border: rgba(148, 163, 184, 0.22);
+  --text-main: #e2e8f0;
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100%;
+}
+
+body {
+  font-family: Manrope, Satoshi, ui-sans-serif, system-ui, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(45, 212, 191, 0.14), transparent 35%),
+    linear-gradient(130deg, var(--bg-start), var(--bg-mid) 48%, var(--bg-end));
+  background-attachment: fixed;
+}
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 48px rgba(2, 6, 23, 0.38);
+}
+
+.grid-noise {
+  position: relative;
+}
+
+.grid-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
