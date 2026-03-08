@@ -1,0 +1,2 @@
+add boxscore 
+fix resume link 

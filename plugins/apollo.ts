@@ -1,9 +1,13 @@
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
+
 export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig()
 
-  nuxtApp.hook('apollo:auth', ({ token }) => {
-    if (typeof runtimeConfig.githubToken === 'string') {
-      token.value = runtimeConfig.githubToken
+  // @ts-ignore - apollo:auth is a hook from the apollo module
+  nuxtApp.hook('apollo:auth', (params: any) => {
+    const githubToken = runtimeConfig.public.githubToken
+    if (typeof githubToken === 'string' && githubToken && params.token) {
+      params.token.value = githubToken
     }
   })
 })

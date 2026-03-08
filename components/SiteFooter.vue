@@ -1,28 +1,6 @@
 <script setup lang="ts">
+import { SOCIAL_LINKS } from '../constants/portfolio'
 const currentYear = new Date().getFullYear();
-
-const links = [
-  {
-    name: "GitHub",
-    href: "https://github.com/alexquar",
-    icon: "entypo-social:github-with-circle",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/alex-quarrie-81ab3128b/",
-    icon: "entypo-social:linkedin-with-circle",
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/_alexq_/",
-    icon: "entypo-social:instagram",
-  },
-  {
-    name: "Email",
-    href: "mailto:alexquarrie@gmail.com",
-    icon: "entypo:mail",
-  }
-];
 </script>
 
 <template>
@@ -40,7 +18,7 @@ const links = [
 
           <div class="flex flex-row items-center gap-4">
             <a
-              v-for="link in links"
+              v-for="link in SOCIAL_LINKS"
               :key="link.name"
               :href="link.href"
               target="_blank"

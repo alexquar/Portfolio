@@ -2,16 +2,9 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { onMounted } from 'vue'
+import type { MobileProject } from '../types/portfolio'
 
-interface MobileProjectInfo {
-  name: string
-  website: string
-  image: string[]
-  details: string
-  tools: string[]
-}
-
-const props = defineProps<{ info: MobileProjectInfo }>()
+const props = defineProps<{ info: MobileProject }>()
 
 onMounted(() => {
   AOS.init({ duration: 900, once: true })
@@ -35,15 +28,16 @@ onMounted(() => {
           </span>
         </div>
 
-        <a
+        <AppButton
           :href="props.info.website"
           target="_blank"
           rel="noopener"
-          class="mt-8 inline-flex items-center gap-2 rounded-2xl bg-white/5 border border-white/10 px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white/10 hover:border-white/20 active:scale-95"
+          variant="secondary"
+          class="mt-8"
         >
           View Project
           <Icon name="heroicons:arrow-top-right-on-square" size="1.2rem" class="text-slate-400" />
-        </a>
+        </AppButton>
       </div>
 
       <div class="order-1 md:order-2 flex justify-center">

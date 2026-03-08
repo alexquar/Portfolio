@@ -2,17 +2,9 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'nuxt/app'
+import { NAVIGATION } from '../constants/portfolio'
 
 const route = useRoute()
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Skills', href: '/uses' },
-  { name: 'Web Apps', href: '/webdev' },
-  { name: 'Mobile Apps', href: '/mobile' },
-  { name: 'Other Projects', href: '/other' },
-  { name: 'Repositories', href: '/projects' },
-]
 
 const isCurrent = (href: string) => route.path === href
 </script>
@@ -44,7 +36,7 @@ const isCurrent = (href: string) => route.path === href
           <div class="hidden sm:block">
             <div class="flex items-center space-x-1">
               <a
-                v-for="item in navigation"
+                v-for="item in NAVIGATION"
                 :key="item.name"
                 :href="item.href"
                 :class="[
@@ -65,7 +57,7 @@ const isCurrent = (href: string) => route.path === href
       <DisclosurePanel class="sm:hidden">
         <div class="mx-4 mt-2 space-y-1 rounded-2xl border border-white/10 bg-slate-900/90 p-2 backdrop-blur-xl shadow-2xl">
           <DisclosureButton
-            v-for="item in navigation"
+            v-for="item in NAVIGATION"
             :key="item.name"
             as="a"
             :href="item.href"

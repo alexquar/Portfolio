@@ -1,18 +1,9 @@
+// @ts-ignore - nuxt.config types can be finicky with modules
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    [
-      '@nuxtjs/apollo',
-      {
-        clients: {
-          default: {
-            tokenName: 'github-token',
-            httpEndpoint: 'https://api.github.com/graphql'
-          }
-        }
-      }
-    ]
+    '@nuxtjs/apollo'
   ],
   css: ['~/assets/css/main.css'],
 
@@ -20,13 +11,26 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 
+  // @ts-ignore
+  apollo: {
+    clients: {
+      default: {
+        tokenName: 'github-token',
+        httpEndpoint: 'https://api.github.com/graphql'
+      }
+    }
+  },
+
   runtimeConfig: {
-    githubToken: process.env.GITHUB_TOKEN || ''
+    public: {
+      githubToken: process.env.GITHUB_TOKEN || ''
+    }
   },
 
   typescript: {
     strict: true,
-    typeCheck: false
+    typeCheck: false,
+    lib: ['ESNext', 'DOM']
   },
 
   compatibilityDate: '2025-08-29'

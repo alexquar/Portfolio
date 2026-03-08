@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from 'nuxt/app'
+import { useHead } from '#app'
 import { onMounted, onUnmounted, ref } from 'vue'
 import hi from './assets/hi.png'
 
@@ -34,104 +34,111 @@ const follower = ref<HTMLElement | null>(null)
 const scrollBar = ref<HTMLElement | null>(null)
 
 const updateScroll = () => {
-  if (scrollBar.value) {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
-    const scrolled = (winScroll / height) * 100
-    scrollBar.value.style.width = scrolled + "%"
+  if (!import.meta.client || !scrollBar.value) return
+  
+  const winScroll = window.scrollY
+  const height = document.documentElement.scrollHeight - window.innerHeight
+  const scrolled = height > 0 ? (winScroll / height) * 100 : 0
+  scrollBar.value.style.width = scrolled + "%"
 
-    // Parallax background blobs
-    const blobs = document.querySelectorAll('.animate-blob')
-    blobs.forEach((blob, i) => {
-      const b = blob as HTMLElement
-      const speed = (i + 1) * 0.05
-      b.style.transform = `translate3d(0, ${winScroll * speed}px, 0)`
-    })
-  }
+  // Parallax background blobs
+  const blobs = document.querySelectorAll('.animate-blob')
+  blobs.forEach((blob, i) => {
+    const el = blob as HTMLElement
+    const speed = (i + 1) * 0.05
+    el.style.transform = `translate3d(0, ${winScroll * speed}px, 0)`
+  })
 }
 
 const moveCursor = (e: MouseEvent) => {
-  if (cursor.value && follower.value) {
-    const x = e.clientX
-    const y = e.clientY
-    
-    // Update CSS variables for glass-card glow effect
-    const cards = document.querySelectorAll('.glass-card')
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect()
-      const cardX = x - rect.left
-      const cardY = y - rect.top
-      ;(card as HTMLElement).style.setProperty('--mouse-x', `${cardX}px`)
-      ;(card as HTMLElement).style.setProperty('--mouse-y', `${cardY}px`)
-    })
+  if (!import.meta.client || !cursor.value || !follower.value) return
+  
+  const x = e.clientX
+  const y = e.clientY
+  
+  // Update CSS variables for glass-card glow effect
+  const cards = document.querySelectorAll('.glass-card')
+  cards.forEach(card => {
+    const el = card as HTMLElement
+    const rect = el.getBoundingClientRect()
+    const cardX = x - rect.left
+    const cardY = y - rect.top
+    el.style.setProperty('--mouse-x', `${cardX}px`)
+    el.style.setProperty('--mouse-y', `${cardY}px`)
+  })
 
-    const target = e.target as HTMLElement
-    const magnetic = target.closest('.magnetic-effect') as HTMLElement
+  const target = e.target as HTMLElement | null
+  if (!target) return
+
+  const magnetic = target.closest('.magnetic-effect') as HTMLElement | null
+  
+  if (magnetic) {
+    const rect = magnetic.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
     
-    if (magnetic) {
-      const rect = magnetic.getBoundingClientRect()
-      const centerX = rect.left + rect.width / 2
-      const centerY = rect.top + rect.height / 2
-      
-      // Magnetic pull: cursor gets "sucked" toward the center
-      const pullX = centerX + (x - centerX) * 0.4
-      const pullY = centerY + (y - centerY) * 0.4
-      
-      cursor.value.style.left = `${pullX}px`
-      cursor.value.style.top = `${pullY}px`
-      follower.value.style.left = `${pullX}px`
-      follower.value.style.top = `${pullY}px`
-      
+    const pullX = centerX + (x - centerX) * 0.4
+    const pullY = centerY + (y - centerY) * 0.4
+    
+    cursor.value.style.left = `${pullX}px`
+    cursor.value.style.top = `${pullY}px`
+    follower.value.style.left = `${pullX}px`
+    follower.value.style.top = `${pullY}px`
+    
+    cursor.value.classList.add('cursor-hover')
+    follower.value.style.opacity = '0.6'
+    
+    magnetic.style.transform = `translate3d(${(x - centerX) * 0.25}px, ${(y - centerY) * 0.25}px, 0) scale(1.05)`
+  } else {
+    cursor.value.style.left = `${x}px`
+    cursor.value.style.top = `${y}px`
+    follower.value.style.left = `${x}px`
+    follower.value.style.top = `${y}px`
+    
+    if (target.closest('button, a, .glass-card, .tilt-card')) {
       cursor.value.classList.add('cursor-hover')
       follower.value.style.opacity = '0.6'
-      
-      // Slight physical movement of the element
-      magnetic.style.transform = `translate3d(${(x - centerX) * 0.25}px, ${(y - centerY) * 0.25}px, 0) scale(1.05)`
     } else {
-      cursor.value.style.left = `${x}px`
-      cursor.value.style.top = `${y}px`
-      follower.value.style.left = `${x}px`
-      follower.value.style.top = `${y}px`
-      
-      if (target.closest('button, a, .glass-card, .tilt-card')) {
-        cursor.value.classList.add('cursor-hover')
-        follower.value.style.opacity = '0.6'
-      } else {
-        cursor.value.classList.remove('cursor-hover')
-        follower.value.style.opacity = '0.15'
-      }
+      cursor.value.classList.remove('cursor-hover')
+      follower.value.style.opacity = '0.15'
     }
   }
 }
 
 // Reset magnetic elements on mouse out
 const resetMagnetic = (e: MouseEvent) => {
-  const target = e.target as HTMLElement
-  const magnetic = target.closest('.magnetic-effect') as HTMLElement
+  if (!import.meta.client) return
+  const target = e.target as HTMLElement | null
+  if (!target) return
+  const magnetic = target.closest('.magnetic-effect') as HTMLElement | null
   if (magnetic) {
     magnetic.style.transform = ''
   }
 }
 
 onMounted(() => {
-  window.addEventListener('mousemove', moveCursor)
-  window.addEventListener('mouseout', resetMagnetic)
-  window.addEventListener('scroll', updateScroll)
-  updateScroll()
+  if (process.client) {
+    window.addEventListener('mousemove', moveCursor)
+    window.addEventListener('mouseout', resetMagnetic)
+    window.addEventListener('scroll', updateScroll)
+    updateScroll()
+  }
 })
 
 onUnmounted(() => {
-  window.removeEventListener('mousemove', moveCursor)
-  window.removeEventListener('mouseout', resetMagnetic)
-  window.removeEventListener('scroll', updateScroll)
+  if (process.client) {
+    window.removeEventListener('mousemove', moveCursor)
+    window.removeEventListener('mouseout', resetMagnetic)
+    window.removeEventListener('scroll', updateScroll)
+  }
 })
 
 useHead({
-  title: 'Alex Quarrie',
+  title: 'Alex Quarrie | Software Engineer',
   meta: [
     {
       name: 'description',
-      content: 'Software engineering portfolio'
+      content: 'Software engineering portfolio with full-stack, mobile, and product-focused projects.'
     }
   ],
   link: [{ rel: 'icon', type: 'image/x-icon', href: hi }]

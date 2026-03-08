@@ -2,9 +2,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { computed, onMounted } from 'vue';
-import { useTyping } from '../composables/useTyping'
-
-const { typedText: typedTitle, startTyping } = useTyping('GitHub Ecosystem')
 
 // gql is auto-imported by Nuxt Apollo module, but we define the query here
 // If the plugin complains, we use the global declaration
@@ -64,23 +61,14 @@ const repositories = computed(
 
 onMounted(() => {
   AOS.init({ duration: 900, once: true })
-  startTyping()
 })
 </script>
 
 <template>
   <div>
-    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12" data-aos="fade-up">
-      <div class="relative z-10 max-w-3xl">
-        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
-          {{ typedTitle }}<span class="animate-pulse">|</span>
-        </h1>
-        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
-          Real-time feed of my active repositories. An overview of my open-source contributions and development patterns.
-        </p>
-      </div>
-      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[80px]"></div>
-    </div>
+    <PageHeader
+      title="GitHub Repositories"
+    />
 
     <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <article
