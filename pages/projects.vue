@@ -2,6 +2,9 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { computed, onMounted } from 'vue';
+import { useTyping } from '../composables/useTyping'
+
+const { typedText: typedTitle, startTyping } = useTyping('GitHub Ecosystem')
 
 // gql is auto-imported by Nuxt Apollo module, but we define the query here
 // If the plugin complains, we use the global declaration
@@ -61,54 +64,65 @@ const repositories = computed(
 
 onMounted(() => {
   AOS.init({ duration: 900, once: true })
+  startTyping()
 })
 </script>
 
 <template>
-  <div class="mt-10 md:mt-14">
-    <div class="glass-card rounded-3xl p-8" data-aos="fade-up">
-      <h1 class="text-4xl font-semibold text-white sm:text-5xl">GitHub Projects</h1>
-      <p class="mt-4 text-lg text-slate-300">A collection of my open-source work and repositories.</p>
+  <div>
+    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12" data-aos="fade-up">
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
+          {{ typedTitle }}<span class="animate-pulse">|</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
+          Real-time feed of my active repositories. An overview of my open-source contributions and development patterns.
+        </p>
+      </div>
+      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[80px]"></div>
     </div>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       <article
         v-for="repo in repositories"
         :key="repo.id"
-        class="glass-card flex flex-col justify-between rounded-2xl p-6 transition-all hover:border-white/20 hover:bg-white/[0.07]"
+        class="glass-card group flex flex-col justify-between rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10"
         data-aos="fade-up"
       >
         <div>
           <div class="flex items-center justify-between">
-            <Icon name="mdi:github" class="text-2xl text-slate-400" />
-            <div class="flex gap-3 text-xs text-slate-400">
-              <span class="flex items-center gap-1">
-                <Icon name="mdi:star-outline" />
+            <div class="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 group-hover:bg-cyan-500/5 transition-all">
+              <Icon name="mdi:github" class="text-2xl text-slate-400 group-hover:text-cyan-400 transition-colors" />
+            </div>
+            <div class="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-400">
+              <span class="flex items-center gap-1.5">
+                <Icon name="mdi:star-outline" size="1rem" class="text-slate-600 group-hover:text-amber-500" />
                 {{ repo.stargazers.totalCount }}
               </span>
-              <span class="flex items-center gap-1">
-                <Icon name="mdi:source-fork" />
+              <span class="flex items-center gap-1.5">
+                <Icon name="mdi:source-fork" size="1rem" class="text-slate-600 group-hover:text-cyan-400" />
                 {{ repo.forks.totalCount }}
               </span>
             </div>
           </div>
-          <h2 class="mt-4 text-xl font-semibold text-white">{{ repo.name }}</h2>
-          <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-400">
+          <h2 class="mt-6 text-2xl font-bold text-white transition-colors group-hover:text-cyan-400">{{ repo.name }}</h2>
+          <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-400">
             {{ repo.description || 'No description provided.' }}
           </p>
         </div>
 
-        <div class="mt-6 flex items-center justify-between">
-          <span class="text-xs text-slate-500">
-            Updated {{ new Date(repo.createdAt).toLocaleDateString() }}
+        <div class="mt-10 flex items-center justify-between pt-6 border-t border-white/5">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-slate-600">
+            {{ new Date(repo.createdAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}
           </span>
           <a
             :href="repo.url"
             target="_blank"
             rel="noopener"
-            class="text-sm font-medium text-sky-400 transition hover:text-sky-300"
+            class="group/link flex items-center gap-2 text-sm font-bold text-white transition-all hover:text-cyan-400"
           >
-            View Repo →
+            Explore
+            <Icon name="heroicons:arrow-right-20-solid" class="transition-transform group-hover/link:translate-x-1" />
           </a>
         </div>
       </article>

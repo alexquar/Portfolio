@@ -19,17 +19,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <article data-aos="fade-up" class="glass-card overflow-hidden rounded-3xl p-5 sm:p-7">
-    <div class="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-start">
-      <div>
-        <h2 class="text-2xl font-semibold text-white sm:text-3xl">{{ props.info.name }}</h2>
-        <p class="mt-4 text-sm leading-7 text-slate-300 sm:text-base">{{ props.info.details }}</p>
+  <article data-aos="fade-up" class="glass-card tilt-card group overflow-hidden rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10">
+    <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-3xl font-bold text-white transition-colors group-hover:text-cyan-400">{{ props.info.name }}</h2>
+        <p class="mt-5 text-base leading-relaxed text-slate-400">{{ props.info.details }}</p>
 
-        <div class="mt-6 flex flex-wrap gap-2">
+        <div class="mt-8 flex flex-wrap gap-2">
           <span
             v-for="tool in props.info.tools"
             :key="tool"
-            class="rounded-full border border-cyan-200/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-100"
+            class="rounded-xl border border-white/5 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-300 transition-colors group-hover:border-cyan-500/30 group-hover:bg-cyan-500/5 group-hover:text-cyan-200"
           >
             {{ tool }}
           </span>
@@ -39,13 +39,14 @@ onMounted(() => {
           :href="props.info.website"
           target="_blank"
           rel="noopener"
-          class="mt-6 inline-flex rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40"
+          class="mt-8 inline-flex items-center gap-2 rounded-2xl bg-white/5 border border-white/10 px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white/10 hover:border-white/20 active:scale-95"
         >
           View Project
+          <Icon name="heroicons:arrow-top-right-on-square" size="1.2rem" class="text-slate-400" />
         </a>
       </div>
 
-      <div class="mx-auto md:mx-0">
+      <div class="order-1 md:order-2 flex justify-center">
         <mobilecarousel :images="props.info.image" />
       </div>
     </div>

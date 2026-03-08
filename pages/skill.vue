@@ -4,9 +4,11 @@ defineProps<{ name: string; icon: string }>()
 
 <template>
   <li
-    class="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-white/25"
+    class="group magnetic-effect flex items-center gap-4 rounded-2xl border border-white/5 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-cyan-500/5"
   >
-    <Icon :name="icon" size="1.2rem" class="text-sky-200" />
-    {{ name }}
+    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
+      <Icon :name="icon" size="1.3rem" />
+    </div>
+    <span class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">{{ name }}</span>
   </li>
 </template>

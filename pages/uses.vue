@@ -3,6 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { onMounted } from 'vue'
 import Skill from './skill.vue'
+import { useTyping } from '../composables/useTyping'
 
 interface SkillItem {
   name: string
@@ -61,44 +62,41 @@ const tools: SkillItem[] = [
   { name: 'GraphQL', icon: 'logos:graphql' }
 ]
 
+const { typedText: typedTitle, startTyping } = useTyping('Technical Stack')
+
 onMounted(() => {
   AOS.init({ duration: 900, once: true })
+  startTyping()
 })
 </script>
 
 <template>
-  <div class="mt-10 md:mt-14">
-    <div class="glass-card rounded-3xl p-8" data-aos="fade-up">
-      <h1 class="text-4xl font-semibold text-white sm:text-5xl">Technical Stack</h1>
-      <p class="mt-4 text-lg text-slate-300">The tools I rely on to ship software, although I have had the priviledge to work with many more than just those listed here</p>
+  <div>
+    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12" data-aos="fade-up">
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
+          {{ typedTitle }}<span class="animate-pulse">|</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
+          The tools and technologies I use to build scalable, high-performance software. My stack is focused on type-safety, modularity, and great developer experience.
+        </p>
+      </div>
+      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[80px]"></div>
     </div>
 
-    <section class="mt-10 space-y-10">
-      <div>
-        <h2 class="text-2xl font-semibold text-white">Languages</h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <Skill v-for="item in languages" :key="item.name" :name="item.name" :icon="item.icon" />
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold text-white">Frameworks</h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <Skill v-for="item in frameworks" :key="item.name" :name="item.name" :icon="item.icon" />
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold text-white">Databases</h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <Skill v-for="item in databases" :key="item.name" :name="item.name" :icon="item.icon" />
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold text-white">Tools</h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <Skill v-for="item in tools" :key="item.name" :name="item.name" :icon="item.icon" />
+    <section class="mt-10 space-y-12">
+      <div v-for="section in [
+        { title: 'Languages', items: languages, color: 'text-cyan-400' },
+        { title: 'Frameworks', items: frameworks, color: 'text-blue-400' },
+        { title: 'Databases', items: databases, color: 'text-purple-400' },
+        { title: 'Tools', items: tools, color: 'text-sky-400' }
+      ]" :key="section.title" data-aos="fade-up">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-6 w-1 rounded-full bg-white/20"></div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">{{ section.title }}</h2>
+        </div>
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Skill v-for="item in section.items" :key="item.name" :name="item.name" :icon="item.icon" />
         </ul>
       </div>
     </section>

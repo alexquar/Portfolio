@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useTyping } from '../composables/useTyping'
+const { typedText: typedTitle, startTyping } = useTyping('Specialized Projects')
+
+onMounted(() => {
+  startTyping()
+})
+
 interface OtherProject {
   name: string
   website: string
@@ -55,31 +63,46 @@ const projects: OtherProject[] = [
 </script>
 
 <template>
-  <section class="mt-10 md:mt-16">
-    <div class="glass-card rounded-3xl p-8">
-      <h1 class="text-4xl font-semibold text-white sm:text-5xl">Other Projects</h1>
-      <p class="mt-4 text-lg text-slate-300">Selected systems, ML, and experimental projects beyond web and mobile development.</p>
+  <section >
+    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12">
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
+          {{ typedTitle }}<span class="animate-pulse">|</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
+          Beyond web and mobile: exploring embedded systems, machine learning, and low-level engineering.
+        </p>
+      </div>
+      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-purple-500/10 blur-[80px]"></div>
     </div>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
-      <article v-for="project in projects" :key="project.name" class="glass-card rounded-3xl p-6">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl font-semibold text-white">{{ project.name }}</h2>
-          <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-wide text-slate-300">
-            {{ project.category }}
-          </span>
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+      <article v-for="project in projects" :key="project.name" class="glass-card group flex flex-col justify-between rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10">
+        <div>
+          <div class="flex items-start justify-between gap-4">
+            <h2 class="text-2xl font-bold text-white transition-colors group-hover:text-purple-400">{{ project.name }}</h2>
+            <span class="rounded-xl border border-white/5 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-slate-300">
+              {{ project.category }}
+            </span>
+          </div>
+
+          <p class="mt-5 text-base leading-relaxed text-slate-400">{{ project.details }}</p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span v-for="tool in project.tools" :key="tool" class="rounded-xl border border-white/5 bg-white/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:border-purple-500/30 group-hover:bg-purple-500/5 group-hover:text-purple-200 transition-colors">
+              {{ tool }}
+            </span>
+          </div>
         </div>
 
-        <p class="mt-3 text-sm leading-7 text-slate-300">{{ project.details }}</p>
-
-        <div class="mt-4 flex flex-wrap gap-2">
-          <span v-for="tool in project.tools" :key="tool" class="rounded-full border border-sky-200/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-100">
-            {{ tool }}
-          </span>
-        </div>
-
-        <a :href="project.website" target="_blank" rel="noopener" class="mt-5 inline-flex rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/40">
+        <a 
+          :href="project.website" 
+          target="_blank" 
+          rel="noopener" 
+          class="mt-8 inline-flex items-center gap-2 rounded-2xl bg-white/5 border border-white/10 px-6 py-3 text-sm font-bold text-white transition-all hover:bg-white/10 hover:border-white/20 active:scale-95"
+        >
           View Repository
+          <Icon name="mdi:github" size="1.2rem" class="text-slate-400" />
         </a>
       </article>
     </div>

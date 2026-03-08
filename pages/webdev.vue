@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useTyping } from '../composables/useTyping'
 import communoLearn from '../assets/communoLearn.png'
 import uwatchlist from '../assets/uwatchlist.png'
 import geesespotter from '../assets/geesespotter.png'
 import diary from '../assets/diary.png'
 import ushop from '../assets/ushop.png'
 import helpphoto from '../assets/U-help.png'
+
+const { typedText: typedTitle, startTyping } = useTyping('Web Applications')
+
+onMounted(() => {
+  startTyping()
+})
 
 interface WebProject {
   name: string
@@ -70,10 +78,17 @@ const infos: WebProject[] = [
 </script>
 
 <template>
-  <div class="mt-10 md:mt-16">
-    <div class="glass-card rounded-3xl p-8">
-      <h1 class="text-4xl font-semibold text-white sm:text-5xl">Web Apps</h1>
-      <p class="mt-4 text-lg text-slate-300">Curated full-stack projects that best represent product engineering, system design, and execution quality.</p>
+  <div>
+    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12">
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
+          {{ typedTitle }}<span class="animate-pulse">|</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
+          A selection of full-stack projects showcasing my ability to architect scalable systems and craft delightful user interfaces.
+        </p>
+      </div>
+      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[80px]"></div>
     </div>
 
     <div class="mt-10 space-y-6">

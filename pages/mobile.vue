@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useTyping } from '../composables/useTyping'
+const { typedText: typedTitle, startTyping } = useTyping('Mobile Engineering')
+
+onMounted(() => {
+  startTyping()
+})
+
 interface MobileProject {
   name: string
   website: string
@@ -55,10 +63,17 @@ const infos: MobileProject[] = [
 </script>
 
 <template>
-  <div class="mt-10 md:mt-16">
-    <div class="glass-card rounded-3xl p-8">
-      <h1 class="text-4xl font-semibold text-white sm:text-5xl">Mobile Apps</h1>
-      <p class="mt-4 text-lg text-slate-300">Curated mobile projects focused on product quality, usability, and real end-to-end implementation.</p>
+  <div >
+    <div class="glass-card relative overflow-hidden rounded-3xl p-10 sm:p-12 mb-12">
+      <div class="relative z-10 max-w-3xl">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl min-h-[1.2em]">
+          {{ typedTitle }}<span class="animate-pulse">|</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 leading-relaxed">
+          Crafting high-performance mobile experiences with React Native and SwiftUI, focusing on native-like feel and seamless system integration.
+        </p>
+      </div>
+      <div class="absolute right-0 top-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-blue-500/10 blur-[80px]"></div>
     </div>
 
     <div class="mt-10 space-y-6">

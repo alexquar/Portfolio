@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const props = defineProps<{ images: string[] }>()
 const count = ref(0)
 
@@ -23,18 +25,18 @@ const next = () => {
 
     <button
       @click="previous"
-      class="absolute left-2 top-2 rounded-full border border-white/20 bg-slate-950/70 p-2 text-white backdrop-blur transition hover:bg-slate-800"
+      class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-slate-950/70 p-3 text-white backdrop-blur transition-all hover:scale-110 hover:bg-slate-800 active:scale-90"
       aria-label="Previous image"
     >
-      <span class="block w-5 text-center text-base font-semibold">&lt;</span>
+      <Icon name="heroicons:chevron-left-20-solid" size="1.2rem" />
     </button>
 
     <button
       @click="next"
-      class="absolute right-2 top-2 rounded-full border border-white/20 bg-slate-950/70 p-2 text-white backdrop-blur transition hover:bg-slate-800"
+      class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-slate-950/70 p-3 text-white backdrop-blur transition-all hover:scale-110 hover:bg-slate-800 active:scale-90"
       aria-label="Next image"
     >
-      <span class="block w-5 text-center text-base font-semibold">&gt;</span>
+      <Icon name="heroicons:chevron-right-20-solid" size="1.2rem" />
     </button>
   </div>
 </template>

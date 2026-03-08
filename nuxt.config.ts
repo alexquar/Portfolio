@@ -2,22 +2,28 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxtjs/apollo'
+    [
+      '@nuxtjs/apollo',
+      {
+        clients: {
+          default: {
+            tokenName: 'github-token',
+            httpEndpoint: 'https://api.github.com/graphql'
+          }
+        }
+      }
+    ]
   ],
   css: ['~/assets/css/main.css'],
+
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
 
   runtimeConfig: {
     githubToken: process.env.GITHUB_TOKEN || ''
   },
 
-  apollo: {
-    clients: {
-      default: {
-        tokenName: 'github-token',
-        httpEndpoint: 'https://api.github.com/graphql'
-      }
-    }
-  },
   typescript: {
     strict: true,
     typeCheck: false
