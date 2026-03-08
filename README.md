@@ -1,42 +1,28 @@
-# Nuxt 3 Minimal Starter
+# Alex Quarrie | Software Engineer Portfolio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern, high-performance portfolio showcasing full-stack, mobile, and system engineering projects.
+
+
+## Tech Stack
+
+- **Framework**: [Nuxt 3](https://nuxt.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Headless UI](https://headlessui.com/)
+- **Data**: [Apollo GraphQL](https://www.apollographql.com/) (GitHub Integration)
+- **Animations**: AOS, custom CSS, and reactive physical interactions.
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# yarn
-yarn install
-
-# npm
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
+# Start development server
 npm run dev
-```
 
-## Production
-
-Build the application for production:
-
-```bash
+# Build for production
 npm run build
-```
 
-Locally preview production build:
-
-```bash
+# Preview production build
 npm run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
