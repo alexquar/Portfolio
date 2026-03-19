@@ -56,16 +56,9 @@ const moveCursor = (e: MouseEvent) => {
   const x = e.clientX
   const y = e.clientY
   
-  // Update CSS variables for glass-card glow effect
-  const cards = document.querySelectorAll('.glass-card')
-  cards.forEach(card => {
-    const el = card as HTMLElement
-    const rect = el.getBoundingClientRect()
-    const cardX = x - rect.left
-    const cardY = y - rect.top
-    el.style.setProperty('--mouse-x', `${cardX}px`)
-    el.style.setProperty('--mouse-y', `${cardY}px`)
-  })
+  // Global cursor position for grid masking
+  document.documentElement.style.setProperty('--mouse-x', `${x}px`)
+  document.documentElement.style.setProperty('--mouse-y', `${y}px`)
 
   const target = e.target as HTMLElement | null
   if (!target) return
@@ -116,11 +109,23 @@ const resetMagnetic = (e: MouseEvent) => {
   }
 }
 
+// Click ripple effect
+const createRipple = (e: MouseEvent) => {
+  if (!import.meta.client) return
+  const ripple = document.createElement('div')
+  ripple.className = 'cursor-ripple'
+  ripple.style.left = `${e.clientX}px`
+  ripple.style.top = `${e.clientY}px`
+  document.body.appendChild(ripple)
+  setTimeout(() => ripple.remove(), 600)
+}
+
 onMounted(() => {
   if (process.client) {
     window.addEventListener('mousemove', moveCursor)
     window.addEventListener('mouseout', resetMagnetic)
     window.addEventListener('scroll', updateScroll)
+    window.addEventListener('mousedown', createRipple)
     updateScroll()
   }
 })
@@ -130,6 +135,7 @@ onUnmounted(() => {
     window.removeEventListener('mousemove', moveCursor)
     window.removeEventListener('mouseout', resetMagnetic)
     window.removeEventListener('scroll', updateScroll)
+    window.removeEventListener('mousedown', createRipple)
   }
 })
 

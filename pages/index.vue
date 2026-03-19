@@ -47,8 +47,10 @@ onMounted(() => {
       <div class="glass-card tilt-card lg:col-span-2 rounded-3xl p-8 sm:p-10" data-aos="fade-up" data-aos-delay="100">
         <SectionHeader title="Key Metrics" />
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div v-for="item in TOP_METRICS" :key="item.label" class="group flex flex-col justify-between rounded-2xl border border-white/5 bg-white/[0.03] p-5 transition-all hover:bg-white/[0.06] hover:border-white/10">
-            <p class="text-3xl font-black text-white group-hover:text-cyan-400 transition-colors">{{ item.value }}</p>
+          <div v-for="item in TOP_METRICS" :key="item.label" class="group flex flex-col justify-between rounded-2xl border border-white/5 bg-white/[0.03] p-5 transition-all hover:bg-white/[0.06] hover:border-cyan-500/20 hover:scale-[1.02] hover:-translate-y-1">
+            <p class="text-3xl font-black text-white group-hover:text-cyan-400 transition-colors">
+              <CountUp :value="item.value" />
+            </p>
             <p class="mt-3 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-slate-300">{{ item.label }}</p>
           </div>
         </div>

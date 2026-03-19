@@ -275,5 +275,10 @@ export const SOCIAL_LINKS = [
     name: "Email",
     href: "mailto:alexquarrie@gmail.com",
     icon: "entypo:mail",
+  },
+  {
+    name: "Letterboxd",
+    href: "https://letterboxd.com/aquarrie/",
+    icon: "simple-icons:letterboxd",
   }
 ]
