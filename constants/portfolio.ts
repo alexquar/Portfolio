@@ -5,6 +5,11 @@ import geesespotter from '../assets/geesespotter.png'
 import diary from '../assets/diary.png'
 import ushop from '../assets/ushop.png'
 import helpphoto from '../assets/U-help.png'
+import roo from "../assets/roo_logo.jpeg"
+import opentext from "../assets/opentext_logo.jpeg"
+import wsib from "../assets/wsib_logo.jpeg"
+import rocketry from "../assets/rocketry_logo.jpeg"
+import deloitte from "../assets/deloitte_logo.jpeg"
 
 export const TOP_METRICS: Metric[] = [
   { value: '4x', label: 'Internships at Top Companies' },
@@ -21,27 +26,27 @@ export const WORK_EXPERIENCE: Experience[] = [
   {
     company: "Roo (Internship)",
     role: "Software Engineer",
-    icon: "https://media.licdn.com/dms/image/v2/D560BAQEEqHtA8LjCAg/company-logo_100_100/company-logo_100_100/0/1664838001236/roovets_logo?e=1774483200&v=beta&t=mSR7oo_BSGNyxp0LnOWOmoYG0RyyqW5JrwE7COoJVNc",
+    icon: roo,
   }, 
   {
     company: "Deloite (Internship)",
     role: "Software Engineer",
-    icon: "https://media.licdn.com/dms/image/v2/C560BAQGNtpblgQpJoQ/company-logo_100_100/company-logo_100_100/0/1662120928214/deloitte_logo?e=1774483200&v=beta&t=cp9habE3mU3rFLnOuZdnEk1DMrvPfvXfptsB_ClqDcM",
+    icon: deloitte,
   },
   {
     company: "OpenText (Internship)",
     role: "Software Engineer",
-    icon: "https://media.licdn.com/dms/image/v2/D560BAQGPd0lmMwrnuA/company-logo_100_100/company-logo_100_100/0/1720445944258/opentext_logo?e=1774483200&v=beta&t=nDJvDxSLzkNE57EaqtXToeN-nRQwNZJj11HYO_-yWv4",
+    icon: opentext,
   },
   {
     company: "WSIB (Internship)",
     role: "Software Engineer",
-    icon: "https://media.licdn.com/dms/image/v2/D560BAQG5qgocXFUI4Q/company-logo_100_100/company-logo_100_100/0/1727696147867/wsib_logo?e=1774483200&v=beta&t=KVggDZ5je_acfEr4n_Z5PmlO5KBpy57POZxzoqE7uno",
+    icon: wsib,
   },
   {
     company: "Watelroo Rocketry (Design Team)",
     role: "Software Engineer",
-    icon:"https://media.licdn.com/dms/image/v2/C4D0BAQFgOetarQGJ7Q/company-logo_100_100/company-logo_100_100/0/1631307813876?e=1774483200&v=beta&t=wGqTAN0mA-x0bLQ2PaMTAFY7G_4Ph6ip3_ZoN4d2KUk"
+    icon: rocketry
   }
 ]
 
