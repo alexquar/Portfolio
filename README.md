@@ -1,7 +1,5 @@
 # Alex Quarrie | Software Engineer Portfolio
 
-A modern, high-performance portfolio showcasing full-stack, mobile, and system engineering projects.
-
 
 ## Tech Stack
 
