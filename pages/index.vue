@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useTyping } from '../composables/useTyping'
 import { TOP_METRICS, WORK_EXPERIENCE } from '../constants/portfolio'
 
-const showModal = ref(false)
 const { typedText, startTyping } = useTyping('Alex Quarrie', 160)
 
 onMounted(() => {
@@ -32,8 +31,9 @@ onMounted(() => {
         </p>
 
         <div class="mt-10 flex flex-wrap gap-4">
-          <AppButton @click="showModal = true">
-            View Resume
+          <AppButton href="/documents/Alex_Quarrie_Resume.pdf" download="Alex_Quarrie_Resume.pdf">
+            <Icon name="heroicons:arrow-down-tray-20-solid" />
+            Download Resume
           </AppButton>
           <AppButton href="/webdev" variant="secondary">
             Explore Projects
@@ -71,35 +71,6 @@ onMounted(() => {
         </div>
       </div>
     </section>
-
-    <GenericModal
-      title="Resume"
-      :is-open="showModal"
-      @close="showModal = false"
-    >
-      <template #header-subtitle>
-        <p class="text-sm text-slate-400">For best formatting, use the PDF download.</p>
-      </template>
-
-      <iframe
-        src="https://docs.google.com/document/d/e/2PACX-1vTR5rRQJRGxh4hCQFeSb2PJ7AlGrGKKu-VV1cnoz4sa6DyvLGlU6wtdIRD9B0TLWA/pub?embedded=true"
-        class="h-full w-full"
-        sandbox="allow-scripts allow-same-origin"
-        allowfullscreen
-      ></iframe>
-
-      <template #footer>
-        <AppButton
-          href="https://docs.google.com/document/d/1DpYM3ZNC261ZI3attx_S56qtFXKhqdUw/export?format=pdf"
-          target="_blank"
-          rel="noopener"
-          class="w-full"
-        >
-          <Icon name="heroicons:arrow-down-tray-20-solid" />
-          Download Resume
-        </AppButton>
-      </template>
-    </GenericModal>
   </div>
 </template>
 
